@@ -13,7 +13,11 @@
     - [Mediator Design Pattern](#mediator-design-pattern)
     - [Notification Pattern](#notification-pattern)
 - [Acknowledgement](#acknowledgement)
-
+- [How to use this SDK](#how-to-use-this-sdk)
+  - [Installation](#installation)
+  - [Dependency Injection](#dependency-injection)
+- [Documentation](#documentation)
+- [Examples](#examples)
 
 
 # A C# and dotnet Software Development Kit for the Domain-Driven Design concepts
@@ -150,3 +154,24 @@ So I personally thank you:
 - **[Michael Altmann](https://twitter.com/michael_altmann)** - for his work on the package [FluentResults](https://github.com/altmann/FluentResults).
 - **[Jeremy Skinner](https://twitter.com/JeremySkinner)** - for his work on the package [FluentValidation](https://github.com/FluentValidation/FluentValidation).
 - **[Vladimir Khorikov](https://enterprisecraftsmanship.com/)** - for his work on the package [CSharpFunctionalExtensions](https://github.com/vkhorikov/CSharpFunctionalExtensions), and his dedication to software development community, with articles, courses, training and great contents about TDD and DDD.
+
+
+# How to use this SDK
+
+TODO - In progress of documentation
+
+## Installation
+
+TODO - In progress of documentation
+
+## Dependency Injection
+
+TODO - In progress of documentation
+
+# Documentation
+
+TODO - In progress of documentation
+
+# Examples
+
+TODO - In progress of documentation
