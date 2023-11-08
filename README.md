@@ -38,13 +38,13 @@ One of my biggest frustrations when using Domain-Driven Design was, everytime I 
 
 Besides DDD being well known over the past 20 years, until today, I found a good number of developers and teams that had some critical gaps of the fundamentals and some big misunderstanding of the application for some concepts Eric Evans proposes in his book.
 
-And this brought consequences, for every project I went on. From what I could experienced over time over this gaps and misunderstanding, at minimum, was unsuccessful implementations, defected features, mislead results, right implementations in the wrong places, high coupling, high dependency, business model blurring and lots, lots of bugs and refactorings until the "final decent result".
+And this brought consequences, for every project I went on. From what I could experienced over time over this gaps and misunderstandings, at minimum, was unsuccessful implementations, defected features, mislead results, right implementations in the wrong places, high coupling, high dependency, business model blurring and lots, lots of bugs and refactorings until the "final decent result".
 
 For these and another minor various reasons, this SDK project intend to give you a full range of abstractions and concrete implementations of the concepts existing on the Domain-Driven Design as a standalone Nuget package, built with C# and with the dotnet framework. 
 
 With this SDK, you (and me) can reuse the same implementations without the need of recreating and testing everything we need everytime, over and over again.
 
-Also, this SDK will provide some extended implementations using design patterns that will help you to deal with specific scenarios and business problems inside your application, when you choose to follow the path of using the domain model design to develop your solutions.
+Also, this SDK will provide some extended implementations using design patterns that might help you to deal with specific scenarios and business problems inside your application, when you choose to follow the path of using the domain model design to develop your solutions.
 
 ## The Core DDD concepts
 
@@ -56,9 +56,9 @@ To achieve this, the book provides us a huge number of constraints and careful d
 
 In the book, the author uses Java to create some examples of the implementations as real and fictitious scenarios to demonstrate the usage of the concepts explained along the chapters. When using C# to create this implementations, we have a lot of tools and powerful ways of how to implement all the DDD concepts within the dotnet framework.
 
-But before that, is very important that you notice you should know and master **all the basic concepts** of the domain-driven design before jumping into the code. 
+But before that, is very important you notice you should know and master **all the basic concepts** of the domain-driven design before jumping into the code. 
 
-The next sections will help to describe this concepts without getting too deep into the details.
+The next sections will give you an overview of the basic concepts without getting too much into the details.
 
 ### Ubiquitous Language
 
@@ -92,12 +92,11 @@ And finally, Eric Evans describes the exact definition of what an **Entity** is:
 > 
 > *(...)*
 >
-> *Therefore:
-> "When an object is distinguished by its identity, rather than its attributes, make this primary to its definition in the model. Keep the class definition simple and focused on life cycle continuity and identity. Define a means of distinguishing each object regardless of its form or history. Be alert to requirements that call for matching objects by attributes. Define an operation that is guaranteed to produce a unique result for each object, possibly by attaching a symbol that is guaranteed unique. This means of identification may come from the outside, or it may be an arbitrary identifier created by and for the system, but it must correspond to the identity distinctions in the model. The model must define what it means to be the same thing."*
+> **Therefore:*
+> 
+> *"When an object is distinguished by its identity, rather than its attributes, make this primary to its definition in the model. Keep the class definition simple and focused on life cycle continuity and identity. Define a means of distinguishing each object regardless of its form or history. Be alert to requirements that call for matching objects by attributes. Define an operation that is guaranteed to produce a unique result for each object, possibly by attaching a symbol that is guaranteed unique. This means of identification may come from the outside, or it may be an arbitrary identifier created by and for the system, but it must correspond to the identity distinctions in the model. The model must define what it means to be the same thing."*
 
-Along with some stories and some examples, with this definitions and the concepts we must consider to define and create an Entity model, we have enough tools to create some abstractions with code, representing the meaning and the rules we should follow to *model, design, create and fully implement a domain Entity*.
-
-
+Along with some stories and some examples in this chapter, we had enough definitions and concepts we must consider, understand and apply to define and create an Entity model.
 
 ### Value Objects
 
