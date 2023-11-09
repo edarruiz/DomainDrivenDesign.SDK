@@ -96,15 +96,54 @@ And finally, Eric Evans describes the exact definition of what an **Entity** is:
 > 
 > *(...)*
 >
-> **Therefore:*
-> 
 > *"When an object is distinguished by its identity, rather than its attributes, make this primary to its definition in the model. Keep the class definition simple and focused on life cycle continuity and identity. Define a means of distinguishing each object regardless of its form or history. Be alert to requirements that call for matching objects by attributes. Define an operation that is guaranteed to produce a unique result for each object, possibly by attaching a symbol that is guaranteed unique. This means of identification may come from the outside, or it may be an arbitrary identifier created by and for the system, but it must correspond to the identity distinctions in the model. The model must define what it means to be the same thing."*
 
-Along with some stories and some examples in this chapter, we had enough definitions and concepts we must consider, understand and apply to define and create an Entity model.
+So, these are the key characteristics of an Entity:
+- They are UNIQUE
+- They have a UNIQUE identity
+- They are MUTABLE
+- They have a lifecycle and a history
+- They have attributes
+- They have behaviors
+- They have relations
+- They have validation constraints
+- They reinforce usage of constraints and validations by creational and structural patterns
+- They have diferent representations of the same identity
+- They can transform through its lifecycle, but holds the same identity
+- They cannot be replaced by equivalent instances
 
 ### Value Objects
 
 For very system we have values, their meaning and their definitions. For this reason, I like to think the value objects as *a way of describing things*.
+
+Value objects are introduced in the book on chapter 5, when Eric Evans says:
+
+> *"Many objects have no conceptual identity. These objects describe some characteristic of a  hing."*
+>
+> *(...)*
+>
+> *"However, if we think of this category of object as just the absence of identity, we haven't added much to our toolbox or vocabulary. In fact, these objects have characteristics of their own and their own significance to the model. These are the objects that describe things."*
+>
+> *(...)*
+>
+> *"An object that represents a descriptive aspect of the domain with no conceptual identity is called a VALUE OBJECT. VALUE OBJECTS are instantiated to represent elements of the design that we care about only for what they are, not who or which they are."*
+>
+> *(...)*
+>
+> *"When you care only about the attributes of an element of the model, classify it as a VALUE OBJECT. Make it express the meaning of the attributes it conveys and give it related functionality. Treat the VALUE OBJECT as immutable. Don't give it any identity and avoid the design complexities necessary to maintain ENTITIES."*
+
+So, these are the key characteristics of a Value  Object:
+- They are NOT UNIQUE
+- They are IMMUTABLE
+- They represent VALUES by its structure
+- They have attributes
+- They have behaviors
+- They can have relations
+- They have validation constraints
+- They reinforce usage of constraints and validations by creational and structural patterns
+- They do not have a lifecycle
+- They can be replaced by equivalent instances
+- They can reduce complex operations or tasks to represent, simplify and isolate business rules or any domain logic
 
 ### Domain Services
 
