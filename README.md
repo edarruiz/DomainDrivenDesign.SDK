@@ -16,7 +16,7 @@
     - [Shared Kernel](#shared-kernel)
     - [Anticorruption Layer](#anticorruption-layer)
     - [Transformations](#transformations)
-  - [The essential Toolbox - Useful Design and Architecture Patterns](#the-essential-toolbox---useful-design-and-architecture-patterns)
+  - [Extending the toolbox - More Patterns](#extending-the-toolbox---more-patterns)
     - [Strategy (Policy)](#strategy-policy)
     - [Composite](#composite)
     - [CQRS (Command and Query Responsibility Segregation)](#cqrs-command-and-query-responsibility-segregation)
@@ -269,7 +269,7 @@ TODO - In progress of documentation
 
 TODO - In progress of documentation
 
-## The essential Toolbox - Useful Design and Architecture Patterns
+## Extending the toolbox - More Patterns
 
 TODO - In progress of documentation
 
