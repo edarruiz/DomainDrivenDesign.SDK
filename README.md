@@ -133,17 +133,17 @@ Value objects are introduced in the book on chapter 5, when Eric Evans says:
 > *"When you care only about the attributes of an element of the model, classify it as a VALUE OBJECT. Make it express the meaning of the attributes it conveys and give it related functionality. Treat the VALUE OBJECT as immutable. Don't give it any identity and avoid the design complexities necessary to maintain ENTITIES."*
 
 So, these are the key characteristics of a Value Object:
-- They are NOT UNIQUE *(required)*
-- They are IMMUTABLE *(required)*
-- They represent JUST VALUES by its internal structure *(required)*
-- They have attributes *(required)*
-- They can have behaviors *(optional)*
-- They can have relations *(optional)*
-- They can have validation constraints *(optional)*
-- They can reinforce usage of constraints and validations by creational and structural patterns *(optional)*
-- They do not have a lifecycle *(required)*
-- They can be replaced by equivalent instances *(required)*
-- They can reduce complex operations or tasks to represent, simplify and isolate business rules or any domain logic *(optional, situational)*
+- They are NOT UNIQUE ***(required)***
+- They are IMMUTABLE ***(required)***
+- They represent JUST VALUES by its internal structure ***(required)***
+- They have attributes ***(required)***
+- They can have behaviors ***(optional)***
+- They can have relations ***(optional)***
+- They can have validation constraints ***(optional)***
+- They can reinforce usage of constraints and validations by creational and structural patterns ***(optional)***
+- They do not have a lifecycle ***(required)***
+- They can be replaced by equivalent instances ***(required)***
+- They can reduce complex operations or tasks to represent, simplify and isolate business rules or any domain logic ***(optional, situational)***
 
 ### Domain Services
 
@@ -176,14 +176,14 @@ The Services are introduced in the book on chapter 5, when Eric Evans says:
 *Services* are a common name and a very common concept in web applications. For this reason, when using Domain-Driven Design, we prefix the names of this kind of domain related services, especifically calling them *Domain Services*.
 
 So, these are the key characteristics of a Domain Service:
-- They SHOULD HAVE a defined and definite responsibility *(required)*
-- Their responsibility SHOULD BE defided as part of the domain model *(required)*
-- Their names SHOULD COME from the Ubiquitous Language *(required)*
-- Their parameters and results SHOULD BE domain objects *(required)*
-- They SHOULD NOT strip or steal behavior from Entities and Value Objects *(required)*
-- They MUST represent an operation related to the domain concept that is not a natural part of an Entity or Value Object *(required)*
-- Their interface MUST be defined in terms of other elements of the domain model *(required)*
-- Their operation SHOULD BE stateless *(required)*
+- They SHOULD HAVE a defined and definite responsibility ***(required)***
+- Their responsibility SHOULD BE defided as part of the domain model ***(required)***
+- Their names SHOULD COME from the Ubiquitous Language ***(required)***
+- Their parameters and results SHOULD BE domain objects ***(required)***
+- They SHOULD NOT strip or steal behavior from Entities and Value Objects ***(required)***
+- They MUST represent an operation related to the domain concept that is not a natural part of an Entity or Value Object ***(required)***
+- Their interface MUST be defined in terms of other elements of the domain model ***(required)***
+- Their operation SHOULD BE stateless ***(required)***
 
 ### Domain Events
 
