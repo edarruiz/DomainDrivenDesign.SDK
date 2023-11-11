@@ -5,7 +5,7 @@
     - [Entities](#entities)
     - [Value Objects](#value-objects)
     - [Domain Services](#domain-services)
-    - [Domain Object Life Cycle - The problems that justify the patterns](#domain-object-life-cycle---the-problems-that-justify-the-patterns)
+    - [Domain Object Life Cycle - The problems that justify the Design Patterns](#domain-object-life-cycle---the-problems-that-justify-the-design-patterns)
     - [Aggregates and Aggregate Roots](#aggregates-and-aggregate-roots)
     - [Factories](#factories)
     - [Repositories](#repositories)
@@ -197,7 +197,7 @@ So, these are the key characteristics of a Domain Service:
 - Their interface MUST be defined in terms of other elements of the domain model ***(required)***
 - Their operation SHOULD BE stateless ***(required)***
 
-### Domain Object Life Cycle - The problems that justify the patterns
+### Domain Object Life Cycle - The problems that justify the Design Patterns
 
 We are used to the concept of any object life cycle inside the application, and it's always related to the object life cycle in system's memory.
 
