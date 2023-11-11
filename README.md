@@ -62,7 +62,9 @@ In the book, the author uses Java to create some examples of the implementations
 
 But before that, is very important you notice you should know and master **all the basic concepts** of the domain-driven design before jumping into the code. 
 
-The next sections will give you an overview of the basic concepts without getting too much into the details.
+The next sections, I will give you an overview of the basic concepts without getting too much into the details. This content should be enough for you to get the things right, and have a good grasp of what the concepts of Domain-Driven Design is about.
+
+Enough introductions, let's dive into it!
 
 ### Ubiquitous Language
 
