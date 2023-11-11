@@ -109,7 +109,7 @@ So, these are the key characteristics of an Entity:
 - They can have relations ***(optional)***
 - They reinforce usage of constraints and validations by creational and structural patterns ***(required)***
 - They can have diferent representations of the same identity ***(optional)***
-- They can transform through its lifecycle, but holds the same identity ***(optional)***
+- They can transform through its lifecycle , but holds the same identity ***(optional)***
 - They cannot be replaced by equivalent instances because they are unique ***(required)***
 
 ### Value Objects
@@ -118,7 +118,7 @@ For very system we have values, their meaning and their definitions. For this re
 
 Value objects are introduced in the book on chapter 5, when Eric Evans says:
 
-> *"Many objects have no conceptual identity. These objects describe some characteristic of a  hing."*
+> *"Many objects have no conceptual identity. These objects describe some characteristic of a  thing."*
 >
 > *(...)*
 >
@@ -132,7 +132,7 @@ Value objects are introduced in the book on chapter 5, when Eric Evans says:
 >
 > *"When you care only about the attributes of an element of the model, classify it as a VALUE OBJECT. Make it express the meaning of the attributes it conveys and give it related functionality. Treat the VALUE OBJECT as immutable. Don't give it any identity and avoid the design complexities necessary to maintain ENTITIES."*
 
-So, these are the key characteristics of a Value  Object:
+So, these are the key characteristics of a Value Object:
 - They are NOT UNIQUE *(required)*
 - They are IMMUTABLE *(required)*
 - They represent JUST VALUES by its internal structure *(required)*
@@ -147,7 +147,43 @@ So, these are the key characteristics of a Value  Object:
 
 ### Domain Services
 
-TODO - In progress of documentation
+Domain models objects have responsibilities, limits and limitations, being them an Entity or a Value Object.
+
+Inside the domain, when discovering, defining and using Entities and Value Objects, sometimes we need to do some stuff with them, to or for them. This *stuff we need to do* could be actions, behaviors triggered from some place else, it could be some changes in the state of the domain, well, it could be a lot of things.
+
+When is hard to define WHO (entity or value object) should be responsible for doing the action, when apparently no object is directly responsible for doing it, or when the responsibility could be shared between objects we use a new key concept: *Services.*
+
+Inside the domain model, a service describes and emphasizes relationship between objects, and tends to be named based on its activity, rather than the object sources, being these entities or value objects.
+
+The Services are introduced in the book on chapter 5, when Eric Evans says:
+
+> *"In some cases, the clearest and most pragmatic design includes operations that do not conceptually belong to any object. Rather than force the issue, we can follow the natural  contours of the problem space and include SERVICES explicitly in the model."*
+>
+> *(...)*
+>
+> *"There are important domain operations that can't find a natural home in an ENTITY or VALUE OBJECT. Some of these are intrinsically activities or actions, not things, but since our modeling paradigm is objects, we try to fit them into objects anyway."*
+> 
+> *(...)*
+>
+> *"Some concepts from the domain aren't natural to model as objects. Forcing the required domain functionality to be the responsibility of an ENTITY or VALUE either distorts the definition of a model-based object or adds meaningless artificial objects."*
+> 
+> *"A SERVICE is an operation offered as an interface that stands alone in the model, without encapsulating state, as ENTITIES and VALUE OBJECTS do. SERVICES are a common pattern in technical frameworks, but they can also apply in the domain layer."*
+>
+> *(...)*
+>
+> *"When a significant process or transformation in the domain is not a natural responsibility of an ENTITY or VALUE OBJECT, add an operation to the model as a standalone interface declared as a SERVICE. Define the interface in terms of the language of the model and make sure the operation name is part of the UBIQUITOUS LANGUAGE. Make the SERVICE stateless."*
+
+*Services* are a common name and a very common concept in web applications. For this reason, we prefix the names of this type of services existing in the domain, especifically calling them as *Domain Services*.
+
+So, these are the key characteristics of a Domain Service:
+- They SHOULD HAVE a defined and definite responsibility *(required)*
+- Their responsibility SHOULD BE defided as part of the domain model *(required)*
+- Their names SHOULD COME from the Ubiquitous Language *(required)*
+- Their parameters and results SHOULD BE domain objects *(required)*
+- They SHOULD NOT strip or steal behavior from Entities and Value Objects *(required)*
+- They MUST represent an operation related to the domain concept that is not a natural part of an Entity or Value Object *(required)*
+- Their interface MUST be defined in terms of other elements of the domain model *(required)*
+- Their operation SHOULD BE stateless *(required)*
 
 ### Domain Events
 
