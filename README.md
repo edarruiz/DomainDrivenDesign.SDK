@@ -1,14 +1,24 @@
 - [A C# and dotnet Software Development Kit for the Domain-Driven Design concepts](#a-c-and-dotnet-software-development-kit-for-the-domain-driven-design-concepts)
 - [Background](#background)
-  - [The Core DDD concepts](#the-core-ddd-concepts)
+  - [The Domain-Driven Design Core Concepts](#the-domain-driven-design-core-concepts)
     - [Ubiquitous Language](#ubiquitous-language)
     - [Entities](#entities)
     - [Value Objects](#value-objects)
     - [Domain Services](#domain-services)
-    - [Domain Events](#domain-events)
-    - [Bounded Contexts](#bounded-contexts)
+    - [Domain Object Life Cycle - The problems that justify the patterns](#domain-object-life-cycle---the-problems-that-justify-the-patterns)
     - [Aggregates and Aggregate Roots](#aggregates-and-aggregate-roots)
+    - [Factories](#factories)
+    - [Repositories](#repositories)
+  - [The Domain-Driven Design Model Integrity Concepts](#the-domain-driven-design-model-integrity-concepts)
+    - [Bounded Contexts](#bounded-contexts)
+    - [Continuous Integration (Not CI/CD framework)](#continuous-integration-not-cicd-framework)
+    - [Context Mapping (The infamous mappers)](#context-mapping-the-infamous-mappers)
+    - [Shared Kernel](#shared-kernel)
+    - [Anticorruption Layer](#anticorruption-layer)
+    - [Transformations](#transformations)
   - [The essential Toolbox - Useful Design and Architecture Patterns](#the-essential-toolbox---useful-design-and-architecture-patterns)
+    - [Strategy (Policy)](#strategy-policy)
+    - [Composite](#composite)
     - [CQRS (Command and Query Responsibility Segregation)](#cqrs-command-and-query-responsibility-segregation)
     - [Mediator Design Pattern](#mediator-design-pattern)
     - [Notification Pattern](#notification-pattern)
@@ -50,7 +60,7 @@ With this SDK, you (and me) can reuse the same implementations without the need 
 
 Also, this SDK will provide some extended implementations using design patterns that might help you to deal with specific scenarios and business problems inside your application, when you choose to follow the path of using the domain model design to develop your solutions.
 
-## The Core DDD concepts
+## The Domain-Driven Design Core Concepts
 
 The Domain-Driven Design strategy is composed by a series of concepts, patterns and good pratices. 
 
@@ -104,14 +114,14 @@ So, these are the key characteristics of an Entity:
 - They are UNIQUE ***(required)***
 - They have a UNIQUE identity ***(required)***
 - They are MUTABLE ***(required)***
-- They have a lifecycle and a history ***(required)***
+- They have a life cycle and a history ***(required)***
 - They have attributes ***(required)***
 - They have behaviors ***(required)***
 - They have validation constraints ***(required)***
 - They can have relations ***(optional)***
 - They reinforce usage of constraints and validations by creational and structural patterns ***(required)***
 - They can have diferent representations of the same identity ***(optional)***
-- They can transform through its lifecycle , but holds the same identity ***(optional)***
+- They can transform through its life cycle , but holds the same identity ***(optional)***
 - They cannot be replaced by equivalent instances because they are unique ***(required)***
 
 ### Value Objects
@@ -187,7 +197,51 @@ So, these are the key characteristics of a Domain Service:
 - Their interface MUST be defined in terms of other elements of the domain model ***(required)***
 - Their operation SHOULD BE stateless ***(required)***
 
-### Domain Events
+### Domain Object Life Cycle - The problems that justify the patterns
+
+We are used to the concept of any object life cycle inside the application, and it's always related to the object life cycle in system's memory.
+
+When we talk about an object life cycle in Domain-Driven Design, we are not just talking about its lifetime inside the system memory. We are talking about their life inside and ouside the boudaries of our application: it's all about its creating, continuity, persistency and archiving (death).
+
+It is very, very important you learn to understand and identify this distinction. 
+
+As developers we tend to understand *things* inside our application boudaries, and as expected from us, we tend to do not care what happen about things when our application scope ends, otherwise, it will be impossible to keep track of everything that happens outside our application boundaries scope.
+
+In chapter 6, Eric Evans talk about the life cycle of a domain object, and this will give us grounds to understand the next concepts:
+
+> *"Every object has a life cycle. An object is born, it likely goes through various states, and it eventually dies—being either archived or deleted. Of course, many of these are simple, transient objects, created with an easy call to their constructor, used in some computation, and then abandoned to the garbage collector. There is no need to complicate such objects. But other objects have longer lives, not all of which are spent in active memory. They have complex interdependencies with other objects. They go through changes of state to which invariants apply. Managing these objects presents challenges that can easily derail an attempt at MODEL-DRIVEN DESIGN."*
+>
+> *(...)*
+> 
+
+Also, Eric Evans give us the diagram representing the life cycle of a domain object:
+
+![domain_object_lifecycle](doc/domain_object_lifecycle.png)
+
+The domain object life cycle challenges mentioned in the book, fall in 2 categories:
+
+1. Maintain the object integrity throughout its whole life cycle
+2. Prevent the model from getting swarmed by the life cycle management complexity (even techinical)
+
+To solve this problems, we should use (and implement) the next three concepts presented in the book:
+
+- **Aggregates** - the grouping, association and relationship between model objects;
+- **Factories** - the creational pattern responsible for create and reconstitute complex objects and tree of objects (Aggregates);
+- **Repositories** - the pattern that *glues* the aggregates and the factories together, being responsible for persist, find and retrieve objects while encapsulating the infrastructure complexity and their needed implementation details.
+
+### Aggregates and Aggregate Roots
+
+TODO - In progress of documentation
+
+### Factories
+
+TODO - In progress of documentation
+
+### Repositories
+
+TODO - In progress of documentation
+
+## The Domain-Driven Design Model Integrity Concepts
 
 TODO - In progress of documentation
 
@@ -195,12 +249,35 @@ TODO - In progress of documentation
 
 TODO - In progress of documentation
 
-### Aggregates and Aggregate Roots
+### Continuous Integration (Not CI/CD framework)
 
-Setting the boundaries that tells a story
+TODO - In progress of documentation
+
+### Context Mapping (The infamous mappers)
+
+TODO - In progress of documentation
+
+### Shared Kernel
+
+TODO - In progress of documentation
+
+### Anticorruption Layer
+
+TODO - In progress of documentation
+
+### Transformations
+
 TODO - In progress of documentation
 
 ## The essential Toolbox - Useful Design and Architecture Patterns
+
+TODO - In progress of documentation
+
+### Strategy (Policy)
+
+TODO - In progress of documentation
+
+### Composite
 
 TODO - In progress of documentation
 
