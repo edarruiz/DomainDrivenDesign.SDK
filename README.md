@@ -147,9 +147,9 @@ So, these are the key characteristics of a Value Object:
 
 ### Domain Services
 
-Domain models objects have responsibilities, limits and limitations, being them an Entity or a Value Object.
+Domain models objects have responsibilities, behaviors, relationships, limits and limitations, being them an Entity or a Value Object.
 
-Inside the domain, when discovering, defining and using Entities and Value Objects, sometimes we need to do some stuff with them, to or for them. This *stuff we need to do* could be actions, behaviors triggered from some place else, it could be some changes in the state of the domain, well, it could be a lot of things.
+Inside the domain, when discovering, defining and using Entities and Value Objects, sometimes we need to do some stuff with them, to or for them. This *stuff we need to do* could be actions, activities based on their relationships, behaviors triggered from some place else, it could be some changes in the state of the domain, well, it could be a lot of things.
 
 When is hard to define WHO (entity or value object) should be responsible for doing the action, when apparently no object is directly responsible for doing it, or when the responsibility could be shared between objects we use a new key concept: *Services.*
 
@@ -173,7 +173,7 @@ The Services are introduced in the book on chapter 5, when Eric Evans says:
 >
 > *"When a significant process or transformation in the domain is not a natural responsibility of an ENTITY or VALUE OBJECT, add an operation to the model as a standalone interface declared as a SERVICE. Define the interface in terms of the language of the model and make sure the operation name is part of the UBIQUITOUS LANGUAGE. Make the SERVICE stateless."*
 
-*Services* are a common name and a very common concept in web applications. For this reason, we prefix the names of this type of services existing in the domain, especifically calling them as *Domain Services*.
+*Services* are a common name and a very common concept in web applications. For this reason, when using Domain-Driven Design, we prefix the names of this kind of domain related services, especifically calling them *Domain Services*.
 
 So, these are the key characteristics of a Domain Service:
 - They SHOULD HAVE a defined and definite responsibility *(required)*
