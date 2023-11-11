@@ -99,18 +99,18 @@ And finally, Eric Evans describes the exact definition of what an **Entity** is:
 > *"When an object is distinguished by its identity, rather than its attributes, make this primary to its definition in the model. Keep the class definition simple and focused on life cycle continuity and identity. Define a means of distinguishing each object regardless of its form or history. Be alert to requirements that call for matching objects by attributes. Define an operation that is guaranteed to produce a unique result for each object, possibly by attaching a symbol that is guaranteed unique. This means of identification may come from the outside, or it may be an arbitrary identifier created by and for the system, but it must correspond to the identity distinctions in the model. The model must define what it means to be the same thing."*
 
 So, these are the key characteristics of an Entity:
-- They are UNIQUE
-- They have a UNIQUE identity
-- They are MUTABLE
-- They have a lifecycle and a history
-- They have attributes
-- They have behaviors
-- They have relations
-- They have validation constraints
-- They reinforce usage of constraints and validations by creational and structural patterns
-- They have diferent representations of the same identity
-- They can transform through its lifecycle, but holds the same identity
-- They cannot be replaced by equivalent instances
+- They are UNIQUE ***(required)***
+- They have a UNIQUE identity ***(required)***
+- They are MUTABLE ***(required)***
+- They have a lifecycle and a history ***(required)***
+- They have attributes ***(required)***
+- They have behaviors ***(required)***
+- They have validation constraints ***(required)***
+- They can have relations ***(optional)***
+- They reinforce usage of constraints and validations by creational and structural patterns ***(required)***
+- They can have diferent representations of the same identity ***(optional)***
+- They can transform through its lifecycle, but holds the same identity ***(optional)***
+- They cannot be replaced by equivalent instances because they are unique ***(required)***
 
 ### Value Objects
 
@@ -133,17 +133,17 @@ Value objects are introduced in the book on chapter 5, when Eric Evans says:
 > *"When you care only about the attributes of an element of the model, classify it as a VALUE OBJECT. Make it express the meaning of the attributes it conveys and give it related functionality. Treat the VALUE OBJECT as immutable. Don't give it any identity and avoid the design complexities necessary to maintain ENTITIES."*
 
 So, these are the key characteristics of a Value  Object:
-- They are NOT UNIQUE
-- They are IMMUTABLE
-- They represent VALUES by its structure
-- They have attributes
-- They have behaviors
-- They can have relations
-- They have validation constraints
-- They reinforce usage of constraints and validations by creational and structural patterns
-- They do not have a lifecycle
-- They can be replaced by equivalent instances
-- They can reduce complex operations or tasks to represent, simplify and isolate business rules or any domain logic
+- They are NOT UNIQUE *(required)*
+- They are IMMUTABLE *(required)*
+- They represent JUST VALUES by its internal structure *(required)*
+- They have attributes *(required)*
+- They can have behaviors *(optional)*
+- They can have relations *(optional)*
+- They can have validation constraints *(optional)*
+- They can reinforce usage of constraints and validations by creational and structural patterns *(optional)*
+- They do not have a lifecycle *(required)*
+- They can be replaced by equivalent instances *(required)*
+- They can reduce complex operations or tasks to represent, simplify and isolate business rules or any domain logic *(optional, situational)*
 
 ### Domain Services
 
