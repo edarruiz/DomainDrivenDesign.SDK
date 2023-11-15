@@ -271,14 +271,14 @@ In C#, we have constructors declarations inside various types of objects, being 
 
 For these reasons, we have a creational design pattern that provides an interface for creating objects in a superclass, but allow subclasses to alter the type of the objects that will be created. We call this design pattern *Factory*, a.k.a. *Virtual Constructors*.
 
-The Factories encapsulates the knowledge and rules needed to create a complex object or Aggregate, providing an interface that reflects the goals of the object creation, and give us a logic abstraction of creating the object, in a concrete way inside the code.
+The Factories encapsulates the knowledge and rules needed to create a complex object or Aggregate, providing an interface that reflects the goals of the object creation, and give us all the logic abstraction of creating the object, in a concrete way inside the code.
 
-In the chapter 6, Eric Evans says:
+In the chapter 6 of the book, Eric Evans says:
 
 > *"Shift the responsibility for creating instances of complex objects and AGGREGATES to a separate object, which may itself have no responsibility in the domain model but is still part of the domain design. Provide an interface that encapsulates all complex assembly and that does not require the client to reference the concrete classes of the objects being instantiated. Create entire AGGREGATES as a piece, enforcing their invariants." (...)*
 > 
 
-We have some ways of implementing the Factories. Through the creation patterns such as **Factory Methods**, **Abstract Factories** and **Builders**, we can choose where, why and how we are going to split the object creation responsibility inside our code, inside our code structure.
+We have some ways of implementing the Factories. Through the creation patterns such as **Factory Methods**, **Abstract Factories** and **Builders**, we can choose where, why and how we are going to split the object creation responsibility inside our code structure.
 
 The book give us two basic requirements for any good factory in the chapter 6:
 
@@ -287,14 +287,14 @@ The book give us two basic requirements for any good factory in the chapter 6:
 > *2. The FACTORY should be abstracted to the type desired, rather than the concrete class(es) created. (...)"*
 > 
 
-Also in the same chapter, we have a good direction on where we should implement or put our Factories:
+Also in the same chapter, we have a good direction on where we should implement our Factories:
 
 > *"Generally speaking, you create a factory to build something whose details you want to hide, and you place the FACTORY where you want the control to be. These decisions usually revolve around AGGREGATES." (...)*
 > 
 
-A very important thing (and sometimes missed) worth to consider is, sometimes we don't need to use Factories to hide the implementation details or the existing complexity to create some of the domain model objects. **Sometimes, we can just use a plain and simple public constructors.** 
+One very important thing worth considering, and sometimes overlooked, is that perhaps in some situations we don't need to use Factories to hide the implementation details or the complexity that goes into creating some of the domain model objects. **Sometimes, we can just use a plain and simple public constructors.** 
 
-But when do we choose public constructors over Factories? Eric Evans also mention this on chapter 6 of the book, giving a list of some circunstances you may end up finding to justify this choice:
+But when do we choose public constructors over Factories? Eric Evans also mentions this in chapter 6 of the book, listing some circumstances you might encounter to justify this choice:
 
 > *"I've seen far too much code in which all instances are created by directly calling class constructors, or whatever the primitive level of instance creation is for the programming language. The introduction of FACTORIES has great advantages, and is generally underused. Yet there are times when the directness of a constructor makes it the best choice. FACTORIES can actually obscure simple objects that don't use polymorphism.*
 >
@@ -307,9 +307,9 @@ But when do we choose public constructors over Factories? Eric Evans also mentio
 > - *A public constructor must follow the same rules as a FACTORY: It must be an atomic operation that satisfies all invariants of the created object." (...)*
 > 
 
-From my personal experience, I've also often seen quite the opposite Eric Evans saw, where the usage of the Factories as a RULE, not as a choice.
+From my personal experience, I have also often seen exactly the opposite of what Eric Evans saw, where the use of Factories is a RULE, not a choice.
 
-That being said, we are left with a final thing to consider when implementing the domain object creation patterns: choose were to put the invariant logic required to the domain model objects. This also have some diferences when we are dealing with the creating of Entities and Value Objects.
+That being said, we are left with a final thing to consider when implementing the domain object creation patterns: choose were to put the invariant logic required to the domain model objects. This also presents some differences when we are dealing with the creation of Entities and Value Objects.
 
 For this, Eric Evans says: 
 
@@ -318,7 +318,7 @@ For this, Eric Evans says:
 > *"ENTITY FACTORIES differ from VALUE OBJECT FACTORIES in two ways. VALUE OBJECTS are Immutable; the product comes out complete in its final form. So the FACTORY operations have to allow for a full description of the product. ENTITY FACTORIES tend to take just the essential attributes required to make a valid AGGREGATE. Details can be added later if they are not required by an invariant. (...)"*
 > 
 
-Finally, when using this approaches, we are left yet with the responsibility of reconstituting domain model objects, because of their life cycle and their states. For this, the Factory used for reconstitution is very similar to the creation ones, with two major differences:
+Finally, when using this approach, we still have the responsibility of reconstituting the domain model objects, due to their life cycle and their states. To achieve this, the Factory used for reconstitution is very similar to those used for creation, with two major differences:
 
 > *"An ENTITY FACTORY used for reconstitution does not assign a new tracking ID. To do so would lose the continuity with the object's previous incarnation. So identifying attributes must be part of the input parameters in a FACTORY reconstituting a stored object.
 >
@@ -326,7 +326,7 @@ Finally, when using this approaches, we are left yet with the responsibility of 
 >
 > *"A FACTORY encapsulates the life cycle transitions of creation and reconstitution. Another transition that exposes technical complexity that can swamp the domain design is the transition to and from storage. This transition is the responsibility of another domain design construct, the REPOSITORY." (...)*
 
-With all this in mind, it is time to move to the last piece of patterns that make everything works as a single piece, the [Repositories](#repositories), that holds all the responsibility of persisting, querying and deleting the objects from their life cycle existence.
+With all this in mind, it is time to move to the last piece of patterns that make everything works as a single piece, the [Repositories](#repositories), that holds all the responsibility of persisting, querying and deleting the objects in their life cycle existence.
 
 ### Repositories
 
