@@ -54,7 +54,7 @@ One of my biggest frustrations when using Domain-Driven Design was, everytime I 
 
 Besides DDD being well known over the past 20 years, until today, I found a good number of developers and teams that had some critical gaps of the fundamentals and some big misunderstanding of the application for some concepts Eric Evans proposes in his book.
 
-And this brought consequences, for every project I went on. From what I could experienced over time over this gaps and misunderstandings, at minimum, was unsuccessful implementations, defected features, mislead results, right implementations in the wrong places, high coupling, high dependency, business model blurring and lots, lots of bugs and refactorings until the "final decent result".
+And this brought consequences, for every project I went on. From what I could experienced over time, over this gaps and misunderstandings, at minimum, was unsuccessful implementations, defected features, mislead results, right implementations in the wrong places, high coupling, high dependency, business model blurring and lots, lots of bugs and refactorings until the "final decent result".
 
 For these and another minor various reasons, this SDK project intend to give you a full range of abstractions and concrete implementations of the concepts existing on the Domain-Driven Design as a standalone Nuget package, built with C# and with the dotnet framework. 
 
