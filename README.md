@@ -326,7 +326,7 @@ Finally, when using this approach, we still have the responsibility of reconstit
 >
 > *"A FACTORY encapsulates the life cycle transitions of creation and reconstitution. Another transition that exposes technical complexity that can swamp the domain design is the transition to and from storage. This transition is the responsibility of another domain design construct, the REPOSITORY." (...)*
 
-With all this in mind, it is time to move to the last piece of patterns that make everything works as a single piece, the [Repositories](#repositories), that holds all the responsibility of persisting, querying and deleting the objects in their life cycle existence.
+With all this in mind, it is time to move to the last pattern that make everything works as a single piece, the [Repositories](#repositories), that holds all the responsibility of persisting, querying and deleting the objects in their life cycle existence.
 
 ### Repositories
 
