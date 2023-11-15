@@ -231,7 +231,46 @@ To solve this problems, we should use (and implement) the next three concepts pr
 
 ### Aggregates and Aggregate Roots
 
-TODO - In progress of documentation
+When we think about the domain model objects, we quickly identify and see the relations between objects. Sometimes, this relations are so deeply interconnected that is hard to use them as a tool to maintain the domain model integrity itself.
+
+For these reasons, we should try to see the directions of these relationships between the domain model objects, and also, try to isolate and restrict them as much as possible, so we can refrain the models to explode into too many object references inside the domain model.
+
+In the chapter 6, Eric Evans says:
+
+> *"It is difficult to guarantee the consistency of changes to objects in a model with complex associations. Invariants need to be maintained that apply to closely related groups of objects, not just discrete objects. Yet cautious locking schemes cause multiple users to interfere pointlessly with each other and make a system unusable."* 
+> 
+> *(...)*
+> 
+
+In another words, we need to discover the exact boundaries the domain model objects have. We need to consider the persistence of this objects, their scope of transactions, and finally, how we are going to create and maintain its invariants, so we can have the consistency of the data needed to reflect the domain models as a "single block of information".
+
+For this reasons, in the same chapter, we have the actual definition of *Aggregates* and *Aggregate Roots*, that help us to identify these grouping of objects, their main entities and the limits of their relations between other objects:
+
+> *"First we need an abstraction for encapsulating references within the model. An AGGREGATE is a cluster of associated objects that we treat as a unit for the purpose of data changes. Each AGGREGATE has a root and a boundary. The boundary defines what is inside the AGGREGATE. The root is a single, specific ENTITY contained in the AGGREGATE. The root is the only member of the AGGREGATE that outside objects are allowed to hold references to, although objects within the boundary may hold references to each other. ENTITIES other than the root have local identity, but that identity needs to be distinguishable only within the AGGREGATE, because no outside  bject can ever see it out of the context of the root ENTITY."*
+> 
+> *(...)*
+> 
+> *"Cluster the ENTITIES and VALUE OBJECTS into AGGREGATES and define boundaries around each. Choose one ENTITY to be the root of each AGGREGATE, and control all access to the objects inside the boundary through the root. Allow external objects to hold references to the root only. Transient references to internal members can be passed out for use within a single operation only. Because the root controls access, it cannot be blindsided by changes to the internals. This arrangement makes it practical to enforce all invariants for objects in the AGGREGATE and for the AGGREGATE as a whole in any state change."*
+> 
+> *(...)*
+> 
+
+Once defined these groupings, boundaries and the main elements of the groups, we can deal with all necessary logic to enforce data validation and constraints to achieve the data integrity of the domain model.
+
+Finally, the book define a set of rules that must apply to all object transactions, that helps to translate the conceptual Aggregate into the concrete implementation details:
+
+- The Aggregate Root (root entity) must have a global identity in the whole domain model
+- The Aggregate Root shoud be responsible for checking the invariants inside the Aggregate boundaries
+- The Entities inside the boundary have local identity and unique identity inside the Aggregate
+- No object outside the Aggregate can hold or have a reference to anything that is inside the Aggregate, except to the Aggregate Root Entity
+- The Aggregate Root can provide transient references to the internal Entities, but cannot hold internal references to be exposed outside the boundaries of the Aggregate
+- The Aggregate Root can provide copies of the Value Objects to another objects, and this copies should not contain any associations with the Aggregate
+- Only Aggregate Roots can be obtained directly from the persistence layer (database queries or any equivalent data source read operation). The related objects can only be obtained by transversal of associations.
+- Objects inside the Aggregate can hold references to other Aggregate Root objects existing outside the Aggregate boundaries
+- A removal operation (DELETE) must remove everything within the Aggregate boundaries at once
+- When persisting a change to any object inside the Aggregate boundaries (UPDATE), all invariants of the whole Aggregate must be satisfied.
+
+The next two sections explore the patterns of [Factories](#factories) and [Repositories](#repositories), that operates on Aggregates, encapsulating the complexity of the objects life cycles and their transitions.
 
 ### Factories
 
