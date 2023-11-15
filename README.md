@@ -221,7 +221,7 @@ Also, Eric Evans give us the diagram representing the life cycle of a domain obj
 The domain object life cycle challenges mentioned in the book, fall in 2 categories:
 
 1. Maintain the object integrity throughout its whole life cycle
-2. Prevent the model from getting swarmed by the life cycle management complexity (even techinical)
+2. Prevent the model from getting swarmed by the life cycle management complexity (even technical)
 
 To solve this problems, we should use (and implement) the next three concepts presented in the book:
 
