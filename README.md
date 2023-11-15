@@ -307,7 +307,7 @@ But when do we choose public constructors over Factories? Eric Evans also mentio
 > - *A public constructor must follow the same rules as a FACTORY: It must be an atomic operation that satisfies all invariants of the created object." (...)*
 > 
 
-From my personal experience, I have also often seen exactly the opposite of what Eric Evans saw, where the use of Factories is a RULE, not a choice.
+From my personal experience, I have also often seen exactly the opposite of what Eric Evans saw, where the use of Factories was a RULE, not a choice.
 
 That being said, we are left with a final thing to consider when implementing the domain object creation patterns: choose were to put the invariant logic required to the domain model objects. This also presents some differences when we are dealing with the creation of Entities and Value Objects.
 
