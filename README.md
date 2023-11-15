@@ -106,7 +106,7 @@ The entities (a.k.a Reference Objects) are presented in the book on chapter 5, w
 
 > *"Many objects are not fundamentally defined by their attributes, but rather by a thread of continuity and identity. (...)"*
 
-> ***"Some objects are not defined primarily by their attributes. They represent a thread of identity that runs through time and often across distinct representations. Sometimes such an object must be matched with another object even though attributes differ. An object must be distinguished from other objects even though they might have the same attributes. Mistaken identity can lead to data corruption. (...)"***
+> *"Some objects are not defined primarily by their attributes. They represent a thread of identity that runs through time and often across distinct representations. Sometimes such an object must be matched with another object even though attributes differ. An object must be distinguished from other objects even though they might have the same attributes. Mistaken identity can lead to data corruption. (...)"*
 
 And finally, Eric Evans describes the exact definition of what an **Entity** is:
 
