@@ -46,7 +46,9 @@ If you haven't read the book yet, I strongly recommend you to do so. It not only
 
 # Background
 
-I've been using and improving my understanding, knowledge and usage of the DDD concepts over the years using C# and dotnet. As a developer, I'm far from having a perfect implementation model of the very complex vision the book proposes in each and every corner of its theories. Anyway, this SDK is a very realistic effort to achieve a solid and stable code, enriched with the experience I had in various projects using DDD, C# and dotnet in the past.
+I've been using and improving my understanding, knowledge and usage of the DDD concepts over the years using C# and dotnet. 
+
+As a developer, I'm far from having a perfect implementation model of the very complex vision the book proposes in each and every corner of its theories. Anyway, this SDK is a very realistic effort to achieve a solid and stable code, enriched with the experience I had in various projects using DDD, C# and dotnet in the past.
 
 One of my biggest frustrations when using Domain-Driven Design was, everytime I started working in a new project, new company or new team, I always endup with the requirement of creating all this basic framework of DDD over and over again, from time to time, from solution to solution. Sometimes, we can't just reuse code between projects, teams or companies, for any reason that happens to occurs.
 
@@ -59,6 +61,10 @@ For these and another minor various reasons, this SDK project intend to give you
 With this SDK, you (and me) can reuse the same implementations without the need of recreating and testing everything we need everytime, over and over again.
 
 Also, this SDK will provide some extended implementations using design patterns that might help you to deal with specific scenarios and business problems inside your application, when you choose to follow the path of using the domain model design to develop your solutions.
+
+Finally, as a final goal to this SDK, I decided to choose quality and completeness over simplicity and practicallity. This because we always have deadlines and excessive pressure when we are inside companies, doing our project, doing our job.
+
+This SDK is a honest and humble effort to give the concepts contained inside the book the attention and time they need, to give the developers the most complete abstractions they need to create any implementation based on these very Domain-Driven Design concepts.
 
 ## The Domain-Driven Design Core Concepts
 
