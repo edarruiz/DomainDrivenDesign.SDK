@@ -64,7 +64,7 @@ Also, this SDK will provide some extended implementations using design patterns 
 
 Finally, as a final goal to this SDK, I decided to choose quality and completeness over simplicity and practicallity. This because we always have deadlines and excessive pressure when we are inside companies, doing our project, doing our job.
 
-This SDK is a honest and humble effort to give the concepts contained inside the book the attention and time they need, to give the developers the most complete abstractions they need to create any implementation based on these very Domain-Driven Design concepts.
+This SDK is a honest and humble effort, to give the concepts contained inside the book the attention and time they need, to give the developers the most complete abstractions they should receive to create any implementation, based on these very Domain-Driven Design concepts.
 
 ## The Domain-Driven Design Core Concepts
 
