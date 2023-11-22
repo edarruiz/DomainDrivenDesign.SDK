@@ -367,7 +367,7 @@ Related to the Domain-Driven Design, in chapter 6 of the book, Eric Evans says:
 
 The technical details about database technology, as well as the strategies used to persist, retrieve, and remove data related to the domain model, can lead us to forget about the domain itself and focus too much on the implementation details of the infrastructure and its own needs.
 
-To avoid deviating from this, Repository patterns help us simplify and abstract the way the application should communicate its needs and obtain the expected results.
+To avoid deviating from domain model, Repository patterns help us simplify and abstract the way the application should communicate its needs and obtain the expected results.
 
 Below is an example of how the Repository acts as an abstraction gateway between the application and the database layer:
 
