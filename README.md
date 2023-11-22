@@ -212,6 +212,7 @@ In chapter 6, Eric Evans talk about the life cycle of a domain object, and this 
 Also, Eric Evans give us the diagram representing the life cycle of a domain object:
 
 ![domain_object_lifecycle](doc/domain_object_lifecycle.png)
+<sub>*Image from the book, Chapter 6, Figure 6.1, The Life cycle of a domain object*</sub>
 
 The domain object life cycle challenges mentioned in the book, fall in 2 categories:
 
@@ -329,6 +330,55 @@ Finally, when using this approach, we still have the responsibility of reconstit
 With all this in mind, it is time to move to the last pattern that make everything works as a single piece, the [Repositories](#repositories), that holds all the responsibility of persisting, querying and deleting the objects in their life cycle existence.
 
 ### Repositories
+
+The Repository Pattern was introduced in 2004 initially as part of the Domain-Driven Design and now is one of the most recommended design patterns that can integrated into an application that works with any kind of databases. 
+
+This pattern was also very well implemented and explored by Microsoft inside the .NET Framework, based on its initial concepts.
+
+If you don't know, or even have never heard of this design pattern, don't worry: you're not alone
+
+This is one of the design patterns that is outside the scope of the well-known design patterns defined by the GoF (Gang of Four), who were responsible for publishing the book [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/gp/product/0201633612/) in 1994, by Erich Gamma, John Vlissides, Ralph Johnson, and Richard Helm. Since then, dozens of other object-oriented design patterns have been discovered. The Repository Pattern is one of them.
+
+In short, the *Repository Pattern* is way of abstracting how data is persisted or retrieved from a database. The main goal of this pattern is decouple the data access layer from the business logic layer, so the database operations, such as <code>insert</code>, <code>update</code>, <code>delete</code> and <code>select</code>, are done through methods that do not deal with database concerns, connections, commands, queries and so forth. With this pattern, the implementation details of the infrastructure layer are hidden from the business domain.
+
+You can check out an old MSDN Article, [The Repository Pattern](https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff649690(v=pandp.10)?redirectedfrom=MSDN) (2010), which should provide sufficient information about the details, reasons and objectives of this pattern.
+
+Additionally, another article, [Implementing the Repository and Unit of Work Patterns in an ASP.NET MVC Application (9 of 10)](https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application) adds another pattern that is used in conjunction to the repository one: the *Unit of Work* pattern. If you are curious, you can delve even deeper by researching the topic. For now, let's focus more on just the Repository Pattern.
+
+Related to the Domain-Driven Design, in chapter 6 of the book, Eric Evans says:
+
+> "*Associations allow us to find an object based on its relationship to another. But we must have a starting point for a traversal to an ENTITY or VALUE in the middle of its life cycle.*"
+>
+> *(...)*
+>
+> *"Now from a technical point of view, retrieval of a stored object is really a subset of creation, because the data from the database is used to assemble new objects. Indeed, the code that usually has to be written makes it hard to forget this reality. But conceptually, this is the middle of the life cycle of an ENTITY. A Customer object does not represent a new customer just because we stored it in a database and retrieved it. To keep this distinction in mind, I refer to the creation of an instance from stored data as **reconstitution**."*
+>
+> *(...)*
+>
+> *"A client needs a practical means of acquiring references to preexisting domain objects. If the infrastructure makes it easy to do so, the developers of the client may add more traversable associations, muddling the model. On the other hand, they may use queries to pull the exact data they need from the database, or to pull a few specific objects rather than navigating from AGGREGATE roots. Domain logic moves into queries and client code, and the ENTITIES and VALUE OBJECTS become mere data containers. The sheer technical complexity of applying most database access infrastructure quickly swamps the client code, which leads developers to dumb down the domain layer, which makes the model irrelevant."*
+>
+> *(...)*
+>
+> *"A subset of persistent objects must be globally accessible through a search based on object attributes. Such access is needed for the roots of AGGREGATES that are not convenient to reach by traversal. They are usually ENTITIES, sometimes VALUE OBJECTS with complex internal structure, and sometimes enumerated VALUES. Providing access to other objects muddies important distinctions. Free database queries can actually breach the encapsulation of domain objects and AGGREGATES. Exposure of technical infrastructure and database access mechanisms complicates the client and obscures the MODEL-DRIVEN DESIGN."*
+>
+> *(...)*
+> 
+
+The technical details about database technology, as well as the strategies used to persist, retrieve, and remove data related to the domain model, can lead us to forget about the domain itself and focus too much on the implementation details of the infrastructure and its own needs.
+
+To avoid deviating from this, Repository patterns help us simplify and abstract the way the application should communicate its needs and obtain the expected results.
+
+Below is an example of how the Repository acts as an abstraction gateway between the application and the database layer:
+
+![repository_client_search](doc/repository_client_search.png)
+<sub>*Image from the book, Chapter 6, Figure 6.18, REPOSITORY doing a search for a client*</sub>
+
+Concluding, in chapter 6, Eric Evans says:
+
+> *"For each type of object that needs global access, create an object that can provide the illusion of an in-memory collection of all objects of that type. Set up access through a well-known global interface. Provide methods to add and remove objects, which will encapsulate the actual insertion or removal of data in the data store. Provide methods that select objects based on some criteria and return fully instantiated objects or collections of objects whose attribute values meet the criteria, thereby encapsulating the actual storage and query technology. Provide REPOSITORIES only for AGGREGATE roots that actually need direct access. Keep the client focused on the model, delegating all object storage and access to the REPOSITORIES."*
+>
+> *(...)*
+> 
 
 TODO - In progress of documentation
 
