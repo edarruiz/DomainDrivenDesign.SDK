@@ -212,6 +212,7 @@ In chapter 6, Eric Evans talk about the life cycle of a domain object, and this 
 Also, Eric Evans give us the diagram representing the life cycle of a domain object:
 
 ![domain_object_lifecycle](doc/domain_object_lifecycle.png)
+
 <sub>*Image from the book, Chapter 6, Figure 6.1, The Life cycle of a domain object*</sub>
 
 The domain object life cycle challenges mentioned in the book, fall in 2 categories:
@@ -371,6 +372,7 @@ To avoid deviating from this, Repository patterns help us simplify and abstract 
 Below is an example of how the Repository acts as an abstraction gateway between the application and the database layer:
 
 ![repository_client_search](doc/repository_client_search.png)
+
 <sub>*Image from the book, Chapter 6, Figure 6.18, REPOSITORY doing a search for a client*</sub>
 
 Concluding, in chapter 6, Eric Evans says:
