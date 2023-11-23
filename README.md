@@ -1,33 +1,33 @@
 - [A C# and dotnet Software Development Kit for the Domain-Driven Design concepts](#a-c-and-dotnet-software-development-kit-for-the-domain-driven-design-concepts)
 - [Background](#background)
   - [Some very important things you should know before you start](#some-very-important-things-you-should-know-before-you-start)
-  - [The Domain-Driven Design Core Concepts](#the-domain-driven-design-core-concepts)
-    - [Ubiquitous Language](#ubiquitous-language)
-    - [Entities](#entities)
-    - [Value Objects](#value-objects)
-    - [Domain Services](#domain-services)
-    - [Domain Object Life Cycle - The problems that justify the Design Patterns](#domain-object-life-cycle---the-problems-that-justify-the-design-patterns)
-    - [Aggregates and Aggregate Roots](#aggregates-and-aggregate-roots)
-    - [Factories](#factories)
-    - [Repositories](#repositories)
-  - [The Domain-Driven Design Model Integrity Concepts](#the-domain-driven-design-model-integrity-concepts)
-    - [Bounded Contexts](#bounded-contexts)
-    - [Continuous Integration (Not CI/CD framework)](#continuous-integration-not-cicd-framework)
-    - [Context Mapping (The infamous mappers)](#context-mapping-the-infamous-mappers)
-    - [Shared Kernel](#shared-kernel)
-    - [Anticorruption Layer](#anticorruption-layer)
-    - [Transformations](#transformations)
-  - [Extending the toolbox - More Patterns](#extending-the-toolbox---more-patterns)
-    - [Strategy (Policy)](#strategy-policy)
-    - [Composite](#composite)
-    - [CQRS (Command and Query Responsibility Segregation)](#cqrs-command-and-query-responsibility-segregation)
-    - [Mediator Design Pattern](#mediator-design-pattern)
-    - [Notification Pattern](#notification-pattern)
+- [The Domain-Driven Design Core Concepts](#the-domain-driven-design-core-concepts)
+  - [Ubiquitous Language](#ubiquitous-language)
+  - [Entities](#entities)
+  - [Value Objects](#value-objects)
+  - [Domain Services](#domain-services)
+  - [Domain Object Life Cycle - The problems that justify the Design Patterns](#domain-object-life-cycle---the-problems-that-justify-the-design-patterns)
+  - [Aggregates and Aggregate Roots](#aggregates-and-aggregate-roots)
+  - [Factories](#factories)
+  - [Repositories](#repositories)
+- [The Domain-Driven Design Model Integrity Concepts](#the-domain-driven-design-model-integrity-concepts)
+  - [Bounded Contexts](#bounded-contexts)
+  - [Continuous Integration (Not CI/CD framework)](#continuous-integration-not-cicd-framework)
+  - [Context Mapping (The infamous mappers)](#context-mapping-the-infamous-mappers)
+  - [Shared Kernel](#shared-kernel)
+  - [Anticorruption Layer](#anticorruption-layer)
+  - [Transformations](#transformations)
+- [Extending the toolbox - More Patterns](#extending-the-toolbox---more-patterns)
+  - [Strategy (Policy)](#strategy-policy)
+  - [Composite](#composite)
+  - [CQRS (Command and Query Responsibility Segregation)](#cqrs-command-and-query-responsibility-segregation)
+  - [Mediator Design Pattern](#mediator-design-pattern)
+  - [Notification Pattern](#notification-pattern)
 - [Acknowledgement](#acknowledgement)
 - [How to use this SDK](#how-to-use-this-sdk)
   - [Installation](#installation)
   - [Dependency Injection](#dependency-injection)
-- [Documentation](#documentation)
+- [API Documentation](#api-documentation)
 - [Examples](#examples)
 
 
@@ -145,7 +145,7 @@ Be patience, be persistent, be curious, and remember, experience and success com
 
 I wish you a good learning journey!
 
-## The Domain-Driven Design Core Concepts
+# The Domain-Driven Design Core Concepts
 
 The Domain-Driven Design strategy is composed by a series of concepts, patterns and good pratices. 
 
@@ -161,7 +161,7 @@ The next sections, I will give you an overview of the basic concepts without get
 
 Enough introductions, let's dive into it!
 
-### Ubiquitous Language
+## Ubiquitous Language
 
 I like to call this concept as the *final desired common language everyone in the project should know and must use*.
 
@@ -178,7 +178,7 @@ This language should be based on the terms and concepts of the domain and should
 
 For the SDK, the ubiquitous language is always present when we choose to use some common verbs, nouns, noun phrases for classes, methods, interfaces, services and other general components of the code structure, bringing meaning to this structures and pieces of code.
 
-### Entities
+## Entities
 
 When we think about an entity model, we must think them as *the core and the heart of the domain model design*.
 
@@ -210,7 +210,7 @@ So, these are the key characteristics of an Entity:
 - They can transform through its life cycle , but holds the same identity ***(optional)***
 - They cannot be replaced by equivalent instances because they are unique ***(required)***
 
-### Value Objects
+## Value Objects
 
 For very system we have values, their meaning and their definitions. For this reason, I like to think the value objects as *a way of describing things*.
 
@@ -238,7 +238,7 @@ So, these are the key characteristics of a Value Object:
 - They can be replaced by equivalent instances ***(required)***
 - They can reduce complex operations or tasks to represent, simplify and isolate business rules or any domain logic ***(optional, situational)***
 
-### Domain Services
+## Domain Services
 
 Domain models objects have responsibilities, behaviors, relationships, limits and limitations, being them an Entity or a Value Object.
 
@@ -273,7 +273,7 @@ So, these are the key characteristics of a Domain Service:
 - Their interface MUST be defined in terms of other elements of the domain model ***(required)***
 - Their operation SHOULD BE stateless ***(required)***
 
-### Domain Object Life Cycle - The problems that justify the Design Patterns
+## Domain Object Life Cycle - The problems that justify the Design Patterns
 
 We are used to the concept of any object life cycle inside the application, and it's always related to the object life cycle in system's memory.
 
@@ -305,7 +305,7 @@ To solve this problems, we should use (and implement) the next three concepts pr
 - **Factories** - the creational pattern responsible for create and reconstitute complex objects and tree of objects (Aggregates);
 - **Repositories** - the pattern that *glues* the aggregates and the factories together, being responsible for persist, find and retrieve objects while encapsulating the infrastructure complexity and their needed implementation details.
 
-### Aggregates and Aggregate Roots
+## Aggregates and Aggregate Roots
 
 When we think about the domain model objects, we quickly identify and see the relations between objects. Sometimes, this relations are so deeply interconnected that is hard to use them as a tool to maintain the domain model integrity itself.
 
@@ -342,7 +342,7 @@ Finally, the book define a set of rules that must apply to all object transactio
 
 The next two sections explore the patterns of [Factories](#factories) and [Repositories](#repositories), that operates on Aggregates, encapsulating the complexity of the objects life cycles and their transitions.
 
-### Factories
+## Factories
 
 We rely a lot on the object creation and destruction when we are creating software solutions for business. This is very natural concept and a common task that developers do when they create the code.
 
@@ -409,7 +409,7 @@ Finally, when using this approach, we still have the responsibility of reconstit
 
 With all this in mind, it is time to move to the last pattern that make everything works as a single piece, the [Repositories](#repositories), that holds all the responsibility of persisting, querying and deleting the objects in their life cycle existence.
 
-### Repositories
+## Repositories
 
 The Repository Pattern was introduced in 2004 initially as part of the Domain-Driven Design and now is one of the most recommended design patterns that can integrated into an application that works with any kind of databases. 
 
@@ -463,55 +463,55 @@ Concluding, in chapter 6, Eric Evans says:
 
 TODO - In progress of documentation
 
-## The Domain-Driven Design Model Integrity Concepts
+# The Domain-Driven Design Model Integrity Concepts
 
 TODO - In progress of documentation
 
-### Bounded Contexts
+## Bounded Contexts
 
 TODO - In progress of documentation
 
-### Continuous Integration (Not CI/CD framework)
+## Continuous Integration (Not CI/CD framework)
 
 TODO - In progress of documentation
 
-### Context Mapping (The infamous mappers)
+## Context Mapping (The infamous mappers)
 
 TODO - In progress of documentation
 
-### Shared Kernel
+## Shared Kernel
 
 TODO - In progress of documentation
 
-### Anticorruption Layer
+## Anticorruption Layer
 
 TODO - In progress of documentation
 
-### Transformations
+## Transformations
 
 TODO - In progress of documentation
 
-## Extending the toolbox - More Patterns
+# Extending the toolbox - More Patterns
 
 TODO - In progress of documentation
 
-### Strategy (Policy)
+## Strategy (Policy)
 
 TODO - In progress of documentation
 
-### Composite
+## Composite
 
 TODO - In progress of documentation
 
-### CQRS (Command and Query Responsibility Segregation)
+## CQRS (Command and Query Responsibility Segregation)
 
 TODO - In progress of documentation
 
-### Mediator Design Pattern
+## Mediator Design Pattern
 
 TODO - In progress of documentation
 
-### Notification Pattern
+## Notification Pattern
 
 > *"An object that collects together information about errors and other information in the domain layer and communicates it to the presentation."*
 > 
@@ -544,7 +544,7 @@ TODO - In progress of documentation
 
 TODO - In progress of documentation
 
-# Documentation
+# API Documentation
 
 TODO - In progress of documentation
 
