@@ -90,7 +90,7 @@ You should know that Domain-Driven Design is not suitable for all projects and d
 I will give you my list of the advantages (pros) and drawbacks (cons) of using DDD inside your project, that I have been able to observe over time:
 
 - **Advantages**
-  - It will strengthen and improve team communication with the use of a ubiquitous language, which creates a universal form of communication that leads to the same understanding, reducing misunderstandings throughout the project development;
+  - It will strengthen and improve team communication with the use of a ubiquitous language, which creates a universal form of communication, reducing misunderstandings throughout the project development;
   - It will use design patterns and principles that really solves the business problems as a very solid and simplified software solution;
   - Domain-Model centric solutions helps to create clear code (that tells a story) and segregates the whole system by responsibilities instead of spliting the system by technical decisions or limitations;
   - It will give you a perfect strategy when you have a system where the business rules (the domain itself) are expected to change frequently over time, where the business logic is complex and convoluted, so you need to change your system behaviors in a controlled manner;
