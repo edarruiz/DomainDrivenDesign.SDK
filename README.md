@@ -139,7 +139,7 @@ I wish you success learning or improving your Domain-Driven Design skills, which
 
 I'm sure it may take some time, but the results are worth the time and the effort.
 
-Be patience, be persistent, be curious, and remember, experience and success comes with trial and error. You only fail if you give up.
+Be patience, be persistent, be curious, and remember: experience and success comes with trial and error. You only fail if you give up.
 
 I wish you a good learning journey!
 
@@ -151,11 +151,11 @@ The main goal of Domain-Driven Design is to create a model (representation) that
 
 To achieve this, the book provides us a huge number of constraints and careful definitions that should be followed to create a successful domain model design solution.
 
-In the book, the author uses Java to create some examples of the implementations as real and fictitious scenarios to demonstrate the usage of the concepts explained along the chapters. When using C# to create this implementations, we have a lot of tools and powerful ways of how to implement all the DDD concepts within the dotnet framework.
+In the book, the author uses Java to create some examples of the implementations as real and fictitious scenarios to demonstrate the usage of the concepts explained along the chapters. When using C# to create this implementations, we have a lot of tools and powerful ways on how to implement all the DDD concepts using dotnet.
 
 But before that, is very important you notice you should know and master **all the basic concepts** of the domain-driven design before jumping into the code. 
 
-The next sections, I will give you an overview of the basic concepts without getting too much into the details. This content should be enough for you to get the things right, and have a good grasp of what the concepts of the Domain-Driven Design are all about.
+The next sections, I will give you an overview of the basic concepts without getting too much into the details. This content should be enough for you to get all the things right, and have a good grasp of what the concepts of the Domain-Driven Design are all about.
 
 Enough introductions, let's dive into it!
 
@@ -172,7 +172,7 @@ The **ubiquitous language** is introduced in the book on chapter 2, with a simpl
 
 In a simple way, we must understand the ubiquitous language as a common language shared by both domain experts and developers, which is used to define the model and communicate about the domain. 
 
-This language should be based on the terms and concepts of the domain and should be used consistently throughout the project.
+This language should be based on the terms and concepts of the domain, and should be used consistently throughout the project.
 
 For the SDK, the ubiquitous language is always present when we choose to use some common verbs, nouns, noun phrases for classes, methods, interfaces, services and other general components of the code structure, bringing meaning to this structures and pieces of code.
 
@@ -264,22 +264,22 @@ The Services are introduced in the book on chapter 5, when Eric Evans says:
 So, these are the key characteristics of a Domain Service:
 - They SHOULD HAVE a defined and definite responsibility ***(required)***
 - Their responsibility SHOULD BE defided as part of the domain model ***(required)***
-- Their names SHOULD COME from the Ubiquitous Language ***(required)***
+- Their names SHOULD COME FROM the Ubiquitous Language ***(required)***
 - Their parameters and results SHOULD BE domain objects ***(required)***
 - They SHOULD NOT strip or steal behavior from Entities and Value Objects ***(required)***
 - They MUST represent an operation related to the domain concept that is not a natural part of an Entity or Value Object ***(required)***
-- Their interface MUST be defined in terms of other elements of the domain model ***(required)***
+- Their interface MUST BE defined in terms of other elements of the domain model ***(required)***
 - Their operation SHOULD BE stateless ***(required)***
 
 ## Domain Object Life Cycle - The problems that justify the Design Patterns
 
 We are used to the concept of any object life cycle inside the application, and it's always related to the object life cycle in system's memory.
 
-When we talk about an object life cycle in Domain-Driven Design, we are not just talking about its lifetime inside the system memory. We are talking about their life inside and ouside the boudaries of our application: it's all about its creating, continuity, persistency and archiving (death).
+When we talk about an object life cycle in Domain-Driven Design, we are not just talking about its lifetime inside the system memory. We are talking about their life inside and ouside the scope of our application: it's all about its creation, continuity, persistency and archiving (death).
 
-It is very, very important you learn to understand and identify this distinction. 
+It is very very important you learn to understand and identify these distinctions. 
 
-As developers we tend to understand *things* inside our application boudaries, and as expected from us, we tend to do not care what happen about things when our application scope ends, otherwise, it will be impossible to keep track of everything that happens outside our application boundaries scope.
+As developers we tend to understand *things* inside our application scope, and as expected from us, we tend to do not care what happen about the same *things* when our application scope ends, otherwise, it will be impossible to keep track of everything that happens outside our application.
 
 In chapter 6, Eric Evans talk about the life cycle of a domain object, and this will give us grounds to understand the next concepts:
 
@@ -292,7 +292,9 @@ Also, Eric Evans give us the diagram representing the life cycle of a domain obj
 
 <sub>*Image from the book, Chapter 6, Figure 6.1, The Life cycle of a domain object*</sub>
 
-The domain object life cycle challenges mentioned in the book, fall in 2 categories:
+To correctly implement this life cycle of object inside the application, permeating the application boundaries and scope, we may face some difficult challenges. 
+
+The domain object life cycle challenges mentioned in the book fall in 2 main categories:
 
 1. Maintain the object integrity throughout its whole life cycle
 2. Prevent the model from getting swarmed by the life cycle management complexity (even technical)
