@@ -83,7 +83,7 @@ In any case, the information you will find here is precious, carefully selected 
 
 Perhaps this work may seem like an academic presentation, rather than a software development showcase as an SDK, but even so, I truly believe this is the best way for you to understand things and put the pieces together yourself, if you have patience, persistence, willingness to learn and put your knowledge into practice in daily development activities.
 
-I was there when I didn't know anything about DDD, when working with DDD was a pain, it was difficult, and the company's business decisions didn't help me improve, but rather, more often than not, put me in a position that I was forced to bend the concepts into wrong implementations, because they had neither the time nor the desire to do *the right thing*, according to the literature and the technical decisions.
+I was there when I didn't know anything about DDD, when working with DDD was a pain, it was difficult, and the company's business decisions didn't help me improve, but rather, put me in a position that I was forced to bend the concepts into wrong implementations, because they had neither the time nor the desire to do *the right thing*, according to the literature and the technical decisions.
 
 You should know that Domain-Driven Design is not suitable for all projects and does not solve all problems with your software, and if used incorrectly, it can harm the project more than help it achieve success. 
 
