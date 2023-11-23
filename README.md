@@ -18,6 +18,7 @@
   - [Anticorruption Layer](#anticorruption-layer)
   - [Transformations](#transformations)
 - [Extending the toolbox - More Patterns](#extending-the-toolbox---more-patterns)
+  - [Specification](#specification)
   - [Strategy (Policy)](#strategy-policy)
   - [Composite](#composite)
   - [CQRS (Command and Query Responsibility Segregation)](#cqrs-command-and-query-responsibility-segregation)
@@ -458,7 +459,13 @@ This statement explains some advantages the repositories have, including:
 - Communicate design decisions about object access;
 - Allows substitutions for implementations, used extensively in unit testing.
 
-TODO - In progress of documentation
+Other design patterns we can be used along with Repositories, such the [Specification Pattern](#specification), used to create powerful queries and allows a client to describe (that is, specify) what it wants without concern for how it will be obtained. This pattern is described in its own section in this document.
+
+We still have the relationship between Factories and Repositories, the possible technical frameworks to explore to use this pattern in dotnet, and finally how to correctly design domain model objects for relational or non-relation databases. 
+
+As you can see, there is a lot more to talk about Repositories, but is enough for now, otherwise, we are too deep into the possible technical details and technical limitations we encounter to implement it correctly. 
+
+Now its time to move forward, to explore a little bit more about the concepts related to the integrity of the data, structure and relationships of the domain-model objects.
 
 # The Domain-Driven Design Model Integrity Concepts
 
@@ -489,6 +496,10 @@ TODO - In progress of documentation
 TODO - In progress of documentation
 
 # Extending the toolbox - More Patterns
+
+TODO - In progress of documentation
+
+## Specification
 
 TODO - In progress of documentation
 
