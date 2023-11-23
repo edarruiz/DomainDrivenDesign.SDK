@@ -94,7 +94,7 @@ I will give you my list of the advantages (pros) and drawbacks (cons) of using D
   - It will use design patterns and principles that really solves the business problems as a very solid and simplified software solution;
   - Domain-Model centric solutions helps to create clear code (that tells a story) and segregates the whole system by responsibilities instead of spliting the system by technical decisions or limitations;
   - It will give you a perfect strategy when you have a system where the business rules (the domain itself) are expected to change frequently over time, where the business logic is complex and convoluted, so you need to change your system behaviors in a controlled manner;
-  - It will helps to decouple your application dependencies, facilitating not only the development, architectural decisions related to the selected tools and technologies and, finally, helping you to plan e deliver your systems into real world scenarios;
+  - It will helps to decouple your application dependencies, facilitating not only the development and tests, but also, helping you make architectural decisions related to the selected tools and technologies, ultimately helping you plan and deliver your systems into real world scenarios;
   - It will help the developers to become more flexible and have a better understanding of the business they are dealing with;
   - It will sharp the developers ability to abstract things other than object-oriented programming;
   - It will let you better test your applications, since the components and layers are more isolated and have less hard-dependencies;
