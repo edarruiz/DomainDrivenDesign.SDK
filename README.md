@@ -127,7 +127,7 @@ I will give you my list of the advantages (pros) and drawbacks (cons) of using D
   - It will force the managers to deal more with communication problems than with business problems;
   - It will force some changes in the mindset of developer teams;
   - It will require your developer teams to be able to deal with conflicts between software development concepts they have held for years and will now be challenged to change;
-  - It will show you that OOP maybe become your enemy when trying to implement the concepts of DDD instead of helping you, based on the language and technology you choose;
+  - It will show you that OOP maybe become your enemy instead of helping you, when trying to implement some of the concepts of DDD, based on the language and technology of your choice;
   - Discovering what should be an Entity and what should be a Value Object can be challenging, leave you upset, or in the worst case scenario, can drive you crazy about the implementation you have to do;
   - Finally, it will help the project to fail by a large margin if used incorrectly in relation to the DDD rules, strategy and concepts;
 
