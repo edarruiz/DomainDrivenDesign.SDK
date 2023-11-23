@@ -43,51 +43,49 @@ Its concepts and strategy proposals are present since 2003, when Eric Evans publ
 
 If you haven't read the book yet, I strongly recommend you to do so. It not only will give you precious information, but also will open your eyes to a new world of possibilities you are probably missing inside your current implementation details while creating software solutions.
 
-**All the concepts implemented in this SDK was inspired by this book**. This project goal is to provide a standard and practical way of reusing this concepts as implementation building blocks for any application made with dotnet and C#, no matter the type they could be or the purpose they should reach.
+**All the concepts implemented in this SDK was inspired by this book**. This project goal is to provide a standard and practical way of reusing this concepts as implementation building blocks for any application made with dotnet and C#, no matter the type they could be or the purpose they should have.
 
 # Background
 
-I've been using and improving my understanding, knowledge and usage of the DDD concepts over the years using C# and dotnet. 
+I've been using and improving my understanding and knowledge about the DDD concepts over the years using C# and dotnet. 
 
-As a developer, I'm far from having a perfect implementation model of the very complex vision the book proposes in each and every corner of its theories. Anyway, this SDK is a very realistic effort to achieve a solid and stable code, enriched with the experience I had in various projects using DDD, C# and dotnet in the past.
+As a developer, I'm far from having a perfect implementation model of the very complex vision the book proposes in each one of its theories. Anyway, this SDK have the intention to achieve a solid and stable code, enriched with the experience I had in various projects using DDD, C# and dotnet in the past.
 
-One of my biggest frustrations when using Domain-Driven Design was, everytime I started working in a new project, new company or new team, I always endup with the requirement of creating all this basic framework of DDD over and over again, from time to time, from solution to solution. Sometimes, we can't just reuse code between projects, teams or companies, for any reason that happens to occurs.
+One of my biggest frustrations when using Domain-Driven Design was, everytime I started working in a new project in a new company or in a new team, I always end up needing to create all the basic framework of DDD over and over again, from time to time, from solution to solution. Sometimes, we can't just reuse code between projects, teams or companies, for any reason that happens to occurs.
 
-Besides DDD being well known over the past 20 years, until today, I found a good number of developers and teams that had some critical gaps of the fundamentals and some big misunderstanding of the application for some concepts Eric Evans proposes in his book.
+Besides DDD being well known over the past 20 years, until today, I found a good number of developers and teams that had some critical gaps of the fundamentals and some big misunderstanding of the concepts Eric Evans proposes in his book.
 
-And this brought consequences, for every project I went on. From what I could experienced over time, over this gaps and misunderstandings, at minimum, was unsuccessful implementations, defected features, mislead results, right implementations in the wrong places, high coupling, high dependency, business model blurring, and lots, lots of bugs and refactorings until the "final decent result".
+From what I could experienced over time, there was a lot of gaps and misunderstandings, causing at minimum, unsuccessful implementations, defected features, mislead results, right implementations in the wrong places, high coupling, high dependency, business model blurring, and lots, lots of bugs and refactorings until reaching some real successful results.
 
-For these and another minor various reasons, this SDK project intend to give you a full range of abstractions and concrete implementations of the concepts existing on the Domain-Driven Design as a standalone Nuget package, built with C# and with the dotnet framework. 
+For these and another minor reasons, this SDK project intend to give you a full range of abstractions and concrete implementations of the concepts existing on the Domain-Driven Design as a standalone Nuget package, built with C# and with the dotnet framework. 
 
-With this SDK, you (and me) can reuse the same implementations without the need of recreating and testing everything we need everytime, over and over again.
+With this SDK, you (and me) can reuse the same implementations without the need of recreating and testing everything we need everytime.
 
-Also, this SDK will provide some extended implementations using design patterns that might help you to deal with specific scenarios and business problems inside your application, when you choose to follow the path of using the domain model design to develop your solutions.
+Also, this SDK will provide some extended implementations using design patterns that might help you to deal with specific scenarios and business problems inside your application, when you choose to follow the domain model design path to develop your solutions.
 
-My final goal with this SDK, I decided to choose quality and completeness over simplicity and practicallity. This because we always have deadlines and excessive pressure when we are inside companies, doing our project, doing our job.
-
-Finally, this SDK is a honest and humble effort, to give the concepts contained inside the book the attention and time they need, to give the developers the most complete abstractions they should receive to create any implementation, based on these very Domain-Driven Design concepts.
+Finally, I intend to give Domain-Driven Design concepts the attention and time they deserve, to give the developers the most complete abstractions they also deserve.
 
 ## Some very important things you should know before you start
 
-The concepts of the Domain-Driven Design are not easy to understand at first glance, nor they are easy to digest on first reading, reflecting the results of the first implementations you are going to create.
+The concepts of the Domain-Driven Design are not easy to understand at first glance, nor they are easy to digest on first reading, reflecting as results of the first implementations you are going to create.
 
-I would like to advice you not to give up trying to understand and acquire knowledge until you succeed, both on the theory and in the implementation details. 
+I would like to advice you not to give up trying to understand and acquire knowledge until you succeed, both from the theory and from the implementation details perspective. 
 
-**You WILL fail a lot before master the concepts, and you will fail a lot before getting used to the implementation details about the Domain-Driven Design concepts you are supposed to use.**
+**You WILL fail a lot before master the concepts, and you will fail a lot before getting used to the implementation details about the Domain-Driven Design concepts.**
 
-Also, the documentation content you will find here is not for the developers who like *bite-sized content* that you can acquire in just a few minutes, like the development videos we see a lot out there. Today, I believe that many developers have lost their sense of persistence and consistence when trying to learn new things...
+The documentation content you will find here is not for the developers who like *bite-sized content*, that you can acquire in just a few minutes, like the development-related content we can see a lot out there. Today, I believe that many developers have lost their sense of persistence and consistence when trying to learn new things. Nowadays, developers tend to think that if they can't learn something in 30 minutes, then it's not worth their time.
 
 I don't expect you to understand this entire package at once, and I don't expect you to use this package to its full potential in your first few implementations.
 
-In any case, the information you will find here is precious, carefully selected and prepared from various sources, giving you the possibility to really understand the entire scope of concepts that Eric Evans brought us with his book.
+In any case, the information you will find here is precious, carefully selected and prepared from various sources, giving you the possibility to really understand the entire scope of the concepts that Eric Evans brought us with his book.
 
-Perhaps this work may seem like an academic presentation, rather than a software development showcase as an SDK, but even so, I truly believe this is the best way for you to understand things and put the pieces together yourself, if you have patience, persistence, willingness to learn and put your knowledge into practice in daily development activities.
+Perhaps this work may seem like an academic presentation, rather than a software development showcase as an SDK, but even so, I truly believe this is the best way you can understand those things and put the pieces together by yourself, if you have patience, persistence, willingness to learn and dedicate the time to putting your knowledge into practice in daily development activities.
 
-I was there when I didn't know anything about DDD, when working with DDD was a pain, it was difficult, and the company's business decisions didn't help me improve, but rather, put me in a position that I was forced to bend the concepts into wrong implementations, because they had neither the time nor the desire to do *the right thing*, according to the literature and the technical decisions.
+Once, I was in a place where I didn't know anything about DDD, when working with DDD was a pain. It was very difficult, and the company's business decisions didn't help me improve, but rather, sometimes put me in a position that I was forced to bend the concepts into wrong implementations, because they had neither the time nor the desire to do *the right thing*, according to the literature and the technical decisions.
 
-You should know that Domain-Driven Design is not suitable for all projects and does not solve all problems with your software, and if used incorrectly, it can harm the project more than help it achieve success. 
+You should know that Domain-Driven Design is not suitable for all projects and does not solve all problems with your software, and if used incorrectly, it can harm the project more than help it achieve success. Additionally, the Domain-Driven Design will require you to sharp your hard development skills related to C# and dotnet, so maybe you find DDD is not for you (yet), because you lack some technical knowledge.
 
-I will give you my list of the advantages (pros) and drawbacks (cons) of using DDD inside your project, that I have been able to observe over time:
+I will give you my personal (not completed) list of the advantages (pros) and drawbacks (cons) of using DDD inside your project, that I have been able to observe over time:
 
 - **Advantages**
   - It will strengthen and improve team communication with the use of a ubiquitous language, which creates a universal form of communication, reducing misunderstandings throughout the project development;
@@ -131,15 +129,15 @@ I will give you my list of the advantages (pros) and drawbacks (cons) of using D
   - Discovering what should be an Entity and what should be a Value Object can be challenging and sometimes confusing, even for the experienced developers;
   - Finally, it will help the project to fail by a large margin if used incorrectly in relation to the DDD rules, strategy and concepts;
 
-It's up to you to decide whether DDD is the right choice for your project needs. DDD sometimes becomes boring and even with experience it can be complicated.
+It's up to you to decide whether DDD is the right choice for your project. DDD sometimes becomes boring, and even with experience, it can be complicated.
 
-Remember this very clearly: Domain-Driven Design is a proposition, a strategy, not an imposition with patterns, nor a magic wand that will make your systems perfect.
+Remember this very clearly: Domain-Driven Design is a proposition, a strategy, not a design pattern guideline, nor a magic wand that will make your systems perfect and smooth.
 
-But if you choose this path, you are very welcome to the world where everything looks beautiful, but if you don't follow the model-oriented mentality instead of delving too much into the technical side, everything will get ugly very quickly.
+But if you choose to use DDD, you are very welcome to the world where everything looks beautiful, but if you don't follow the model-oriented mentality instead of delving too much into the technical side, everything will get ugly very quickly.
 
 I wish you success learning or improving your Domain-Driven Design skills, which will be reflected in your C# hard skills when applying it.
 
-I'm sure it may take some time, but the results are worth the difficult path that will have to be taken.
+I'm sure it may take some time, but the results are worth the time and the effort.
 
 Be patience, be persistent, be curious, and remember, experience and success comes with trial and error. You only fail if you give up.
 
