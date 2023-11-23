@@ -120,7 +120,7 @@ I will give you my list of the advantages (pros) and drawbacks (cons) of using D
   - It is hard to understand at first, outside of the basic software development concepts;
   - It imposes a greater learning curve for developers and business specialists who have no knowledge of domain modeling strategy, its rules and its concepts;
   - It will required more knowledge from the developers regarding to the tools and technologies they use, or those that the company requires to use;
-  - It will challenge the developers to come up with some creative solutions due to technical limitations in their tools and platforms as they need to drive development by domain model concepts rather than technical limitations;
+  - It will challenge the developers to come up with some creative solutions due to technical limitations in their tools and platforms as they need to drive development by domain model concepts;
   - It will force your developer teams to become agnostic about information persistence, related to databases and data layers;
   - It will force developers to think more and think outside the box, rather than just creating code;
   - It will slow down the development at first, but will allow for faster changes in the future;
