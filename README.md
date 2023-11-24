@@ -6,7 +6,7 @@
   - [Entities](#entities)
   - [Value Objects](#value-objects)
   - [Domain Services](#domain-services)
-  - [Domain Object Life Cycle - The problems that justify the Design Patterns](#domain-object-life-cycle---the-problems-that-justify-the-design-patterns)
+  - [Domain Object Life Cycle - The problems that justify the Patterns](#domain-object-life-cycle---the-problems-that-justify-the-patterns)
   - [Aggregates and Aggregate Roots](#aggregates-and-aggregate-roots)
   - [Factories](#factories)
   - [Repositories](#repositories)
@@ -272,7 +272,7 @@ So, these are the key characteristics of a Domain Service:
 - Their interface MUST BE defined in terms of other elements of the domain model ***(required)***
 - Their operation SHOULD BE stateless ***(required)***
 
-## Domain Object Life Cycle - The problems that justify the Design Patterns
+## Domain Object Life Cycle - The problems that justify the Patterns
 
 We are used to the concept of any object life cycle inside the application, and it's always related to the object life cycle in system's memory.
 
@@ -497,7 +497,20 @@ TODO - In progress of documentation
 
 # Extending the toolbox - More Patterns
 
-TODO - In progress of documentation
+Until now, we've had the opportunity to see some *Design Patterns* and some *Model Patterns*. So, what are the differences between a *Design Pattern* and a *Model Pattern*?
+
+The *Domain Patterns* are mentioned in the chapter 12 of the book, when Eric Evans said the following about them both:
+
+> *"The patterns explored in this book so far are intended specifically for solving problems in a domain model in the context of a MODEL-DRIVEN DESIGN. Actually, though, most of the patterns published to date are more technical in focus. What is the difference between a design pattern and a domain pattern? For starters, the authors of the seminal book, Design Patterns, had this to say:
+> Point of view affects one's interpretation of what is and isn't a pattern. One person's pattern can be another person's primitive building block. For this book we have concentrated on patterns at a certain level of abstraction. Design patterns are not about designs such as linked lists and hash tables that can be encoded in classes and reused as is. Nor are they complex, domain-specific designs for an entire application or subsystem. The design patterns in this book are descriptions of communicating objects and classes that are customized to solve a general design problem in a particular context. [Gamma et al. 1995, p. 3] (...)"*
+> 
+
+So in short: 
+- ***Domain Patterns*** are patterns that solves the domain model inside the context of the model-driven design;
+- ***Domain Patterns*** can be *Design Patterns* that are put to use of the domain model, with some conceptual shifts, applying it to the domain-specific concerns;
+- ***Design Patterns*** are solutions to common problems existing in software design. They are like pre-made blueprints that you can customize to solve a recurring design problem in your code. Furthermore, they are purely technical and correspond to more general concepts, not being a domain-specific concern.
+
+With this key definitions in mind, we will explore in the next sections some of the Design Patterns and Model Patterns used by Domain-Driven Design to solve some specific problems.
 
 ## Specification
 
