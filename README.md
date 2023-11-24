@@ -566,7 +566,7 @@ For this to happen, in the same chapter, Eric Evans give us the clear instructio
 > *"Factor the varying part of a process into a separate “strategy” object in the model. Factor apart a rule and the behavior it governs. Implement the rule or substitutable process following the STRATEGY design pattern. Multiple versions of the strategy object represent different ways the process can be done. (...)"*
 > 
 
-In pratical terms, actually in technical details, what all of this means is:
+In practical terms, in fact in technical details, all this means:
 
 - You MUST model processes as objects;
 - You SHOULD USE <code>composition</code> over <code>inheritance</code> when describing your process as objects;
