@@ -568,7 +568,6 @@ For this to happen, in the same chapter, Eric Evans give us the clear instructio
 
 In pratical terms, actually in technical details, what all of this means is:
 
-- A process is not only a business process (from the domain perspective), but also can represent a behavior for any given object existing inside the model;
 - You MUST model processes as objects;
 - You SHOULD USE <code>composition</code> over <code>inheritance</code> when describing your process as objects;
 - You MUST DESCRIBE each behavior of the process as an <code>interface</code> contract of implementation, and this contract represents a single piece of the process itself;
