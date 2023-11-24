@@ -595,6 +595,9 @@ TODO - In progress of documentation
 > *"An object that collects together information about errors and other information in the domain layer and communicates it to the presentation."*
 > 
 > [Notification](https://martinfowler.com/eaaDev/Notification.html), Martin Fowler, August 2004
+>
+
+TODO - In progress of documentation
 
 # Acknowledgement
 
