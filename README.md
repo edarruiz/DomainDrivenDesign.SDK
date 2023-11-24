@@ -507,7 +507,7 @@ The *Domain Patterns* are mentioned in the chapter 12 of the book, when Eric Eva
 > 
 
 So in short: 
-- ***Domain Patterns*** are patterns that solves the domain model inside the context of the model-driven design;
+- ***Domain Patterns*** are patterns that solves problems of the domain model inside the context of the model-driven design;
 - ***Domain Patterns*** can be *Design Patterns* that are put to use of the domain model, with some conceptual shifts, applying it to the domain-specific concerns;
 - ***Design Patterns*** are solutions to common problems existing in software design. They are like pre-made blueprints that you can customize to solve a recurring design problem in your code. Furthermore, they are purely technical and correspond to more general concepts, not being a domain-specific concern.
 
