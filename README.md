@@ -553,7 +553,7 @@ In the chapter 12 of the book, Eric Evans give us some problem definitions that 
 > *"Domain models contain processes that are not technically motivated but actually meaningful in the problem domain. When alternative processes must be provided, the complexity of choosing the appropriate process combines with the complexity of the multiple processes themselves, and things get out of hand. (...)"*
 >
 
-When we start to model processes, we realize that we have more than way of describing them as objects. Also, when we start to explore all the possible ways of describing (implementing) the process as an object, our process definition could become complicated and awkward. But why?
+When we start to model processes, we realize that we have more than one way of describing them as objects. Also, when we start to explore all the possible ways of describing (implementing) the process as an object, our process definition could become complicated and awkward. But why?
 
 Because, when we think about processes as objects, one process can be represented (described) by one or multiple behaviors inside this same object. To model these behaviors, that together composes the whole process inside our domain object, we need to be able to split each behavior as a single rule, that should represent a single part of the process itself.
 
