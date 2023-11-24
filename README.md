@@ -576,6 +576,8 @@ In practical terms, in fact in technical details, all this means:
 
 This way, you can use this design pattern as a domain pattern, where the conceptual change is related to focus on the ability to express the algorithm (interface) as a process or policy rule inside the domain-model object context. This policies once implemented, represents one behavior of the process itself. When you add multiple behaviors, then you compose your complete process, now being well structured and with exchangeable behaviors described as policies inside your implementation.
 
+Another important thing to note is, this design pattern is compatible with the S.O.L.I.D [Open/Closed Principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle), which proposes that classes should be open for extension but closed for modification.
+
 ## Composite
 
 TODO - In progress of documentation
