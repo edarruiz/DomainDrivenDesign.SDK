@@ -19,7 +19,7 @@
   - [Transformations](#transformations)
 - [Extending the toolbox - More Patterns](#extending-the-toolbox---more-patterns)
   - [Specification](#specification)
-  - [Strategy (Policy)](#strategy-policy)
+  - [Strategy Design Pattern](#strategy-design-pattern)
   - [Composite](#composite)
   - [CQRS (Command and Query Responsibility Segregation)](#cqrs-command-and-query-responsibility-segregation)
   - [Mediator Design Pattern](#mediator-design-pattern)
@@ -517,9 +517,65 @@ With this key definitions in mind, we will explore in the next sections some of 
 
 TODO - In progress of documentation
 
-## Strategy (Policy)
+## Strategy Design Pattern
 
-TODO - In progress of documentation
+The *Strategy* is a Design Pattern by definition. The book give us the following diagram representation of this design pattern:
+
+![strategy_design_pattern](doc/strategy_design_pattern.png)
+
+<sub>*Image from the book, Chapter 12, Relating Design Patterns to the Model, Strategy (A.K.A Policy)*</sub>
+
+Ok, let's explore a little bit the definitions of this design pattern before relating it with the Domain-Driven Design concepts.
+
+> ***Strategy** is a behavioral design pattern that lets you define a family of algorithms, put each of them into a separate class, and make their objects interchangeable.*
+> 
+> [Refactoring Guru](https://refactoring.guru/design-patterns/strategy), Strategy Behavioral Pattern
+> 
+
+> *Define a family of algorithms, encapsulate each one, and make them interchangeable. STRATEGY lets the algorithm vary independently from clients that use it. [Gamma et al. 1995]*
+> 
+
+> ***The Strategy Design Pattern is a behavioral design pattern. It allows you to dynamically change the behavior of an object by encapsulating it into different strategies.***
+>
+> *This pattern enables an object to choose from multiple algorithms and behaviors at runtime, rather than statically choosing a single one.*
+> 
+> *It is based on the principle of composition over inheritance. It defines a family of algorithms, encapsulates each one, and makes them interchangeable at runtime. The core idea behind this pattern is to separate the algorithms from the main object. This allows the object to delegate the algorithm's behavior to one of its contained strategies.*
+> 
+> *In simpler terms, the Strategy Design Pattern provides a way to extract the behavior of an object into separate classes that can be swapped in and out at runtime. This enables the object to be more flexible and reusable, as different strategies can be easily added or modified without changing the object's core code. (...)*"
+>
+> [freeCodeCamp](https://www.freecodecamp.org/news/a-beginners-guide-to-the-strategy-design-pattern/), A Beginner's Guide to the Strategy Design Pattern, May 2023 
+>
+
+With this clear definitions in mind, we can now explore how this Design Pattern is related to the Domain-Driven Design.
+
+In the chapter 12 of the book, Eric Evans give us some problem definitions that could happen inside the domain, when we try to model processes, describing them as objects:
+
+> *"Domain models contain processes that are not technically motivated but actually meaningful in the problem domain. When alternative processes must be provided, the complexity of choosing the appropriate process combines with the complexity of the multiple processes themselves, and things get out of hand. (...)"*
+>
+
+When we start to model processes, we realize that we have more than way of describing them as objects. Also, when we start to explore all the possible ways of describing (implementing) the process as an object, our process definition could become complicated and awkward. But why?
+
+Because, when we think about processes as objects, one process can be represented (described) by one or multiple behaviors inside this same object. To model these behaviors, that together composes the whole process inside our domain object, we need to be able to split each behavior as a single rule, that should represent a single part of the process itself.
+
+When we describe this *part* of the process as a single and unique behavior inside our object, we also need to isolate its implementation so we can control its technical behavior. We can call it a way of describing a *Policy Rule*.
+
+Policies should have straight objectives and the same policy inside different processes could have distinct behaviors, that are defined by its implementation details.
+
+For this to happen, in the same chapter, Eric Evans give us the clear instructions on how to proceed conceptually to achieve these goals when we describe our processes inside our model:
+
+> *"Factor the varying part of a process into a separate “strategy” object in the model. Factor apart a rule and the behavior it governs. Implement the rule or substitutable process following the STRATEGY design pattern. Multiple versions of the strategy object represent different ways the process can be done. (...)"*
+> 
+
+In pratical terms, actually in technical details, what all of this means is:
+
+- A process is not only a business process (from the domain perspective), but also can represent a behavior for any given object existing inside the model;
+- You MUST model processes as objects;
+- You SHOULD USE <code>composition</code> over <code>inheritance</code> when describing your process as objects;
+- You MUST DESCRIBE each behavior of the process as an <code>interface</code> contract of implementation, and this contract represents a single piece of the process itself;
+- Your process behavior MUST BE implemented within the <code>interface</code> contract;
+- Different objects CAN HAVE the same composition, but with different implementations of the <code>interface</code> contract, meaning distinct behaviors inside objects;
+
+This way, you can use this design pattern as a domain pattern, where the conceptual change is related to focus on the ability to express the algorithm (interface) as a process or policy rule inside the domain-model object context. This policies once implemented, represents one behavior of the process itself. When you add multiple behaviors, then you compose your complete process, now being well structured and with exchangeable behaviors described as policies inside your implementation.
 
 ## Composite
 
