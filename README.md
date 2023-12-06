@@ -85,7 +85,7 @@ Perhaps this work may seem like an academic presentation, rather than a software
 
 Not too long ago, I didn't know anything about DDD and working with DDD was a pain. It was very difficult, and the company's business decisions didn't help me improve. Sometimes I was put in a position where I was forced to bend the concepts into wrong implementations, because they had neither the time nor the desire to do *the right thing*, according to the literature and the technical decisions.
 
-You must know that Domain-Driven Design is not suitable for all projects and does not solve all problems with your software. If used incorrectly, it can harm the project more than help it achieve success. Additionally, the Domain-Driven Design will require you improve your skills on how to abstract things in addition to sharp your hard skills related to C# and dotnet, so maybe you find DDD is not for you (yet), because you lack some technical knowledge.
+You must know that Domain-Driven Design is not suitable for all projects and does not solve all your software problems. If used incorrectly, it can harm the project more than help it achieve success. Additionally, the Domain-Driven Design will require you improve your skills on how to abstract things in addition to sharp your hard skills related to C# and dotnet, so maybe you find DDD is not for you (yet), because you lack some technical knowledge.
 
 I will give you my personal (not completed) list of the advantages (pros) and drawbacks (cons) of using DDD inside your project, that I have been able to observe over time:
 
