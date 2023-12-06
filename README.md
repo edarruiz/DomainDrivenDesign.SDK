@@ -83,9 +83,9 @@ In any case, the information you will find here is precious, carefully selected 
 
 Perhaps this work may seem like an academic presentation, rather than a software development showcase as an SDK, but even so, I truly believe this is the best way you can understand those things and put the pieces together by yourself, if you have patience, persistence, willingness to learn and dedicate the time to putting your knowledge into practice in daily development activities.
 
-Once, I was in a place where I didn't know anything about DDD, when working with DDD was a pain. It was very difficult, and the company's business decisions didn't help me improve, but rather, sometimes put me in a position that I was forced to bend the concepts into wrong implementations, because they had neither the time nor the desire to do *the right thing*, according to the literature and the technical decisions.
+Not too long ago, I didn't know anything about DDD, when working with DDD was a pain. It was very difficult, and the company's business decisions didn't help me improve, but rather, sometimes put me in a position that I was forced to bend the concepts into wrong implementations, because they had neither the time nor the desire to do *the right thing*, according to the literature and the technical decisions.
 
-You should know that Domain-Driven Design is not suitable for all projects and does not solve all problems with your software, and if used incorrectly, it can harm the project more than help it achieve success. Additionally, the Domain-Driven Design will require you to sharp your hard development skills related to C# and dotnet, so maybe you find DDD is not for you (yet), because you lack some technical knowledge.
+You must know that Domain-Driven Design is not suitable for all projects and does not solve all problems with your software. If used incorrectly, it can harm the project more than help it achieve success. Additionally, the Domain-Driven Design will require you to sharp your hard development skills related to C# and dotnet, so maybe you find DDD is not for you (yet), because you lack some technical knowledge.
 
 I will give you my personal (not completed) list of the advantages (pros) and drawbacks (cons) of using DDD inside your project, that I have been able to observe over time:
 
