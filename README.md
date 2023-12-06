@@ -57,15 +57,15 @@ One of my biggest frustrations when using Domain-Driven Design was, everytime I 
 
 Besides DDD being well known over the past 20 years, until today, I found a good number of developers and teams that had some critical gaps of the fundamentals and some big misunderstanding of the concepts Eric Evans proposes in his book.
 
-From what I could experienced over time, there was a lot of gaps and misunderstandings, causing at minimum, unsuccessful implementations, defected features, mislead results, right implementations in the wrong places, high coupling, high dependency, business model blurring, and lots, lots of bugs and refactorings until reaching some real successful results.
+Over time, I have experienced these gaps and misunderstandings that cause, at the very least, failed implementations, faulty features, misleading results, correct implementations in the wrong places, high coupling, high dependency, business model fuzziness, many, many bugs and refactorings until reaching some really successful results.
 
-For these and another minor reasons, this SDK project intend to give you a full range of abstractions and concrete implementations of the concepts existing on the Domain-Driven Design as a standalone Nuget package, built with C# and with the dotnet framework. 
+For these and other minor reasons, this SDK project aims to provide a full range of abstractions and concrete implementations of existing Domain-Driven Design concepts as an independent Nuget package, built with C# and the dotnet framework.
 
-With this SDK, you (and me) can reuse the same implementations without the need of recreating and testing everything we need everytime.
+With this SDK, you (and I) can reuse the same implementations without having to recreating and test everything we need every time.
 
-Also, this SDK will provide some extended implementations using design patterns that might help you to deal with specific scenarios and business problems inside your application, when you choose to follow the domain model design path to develop your solutions.
+Additionally, this SDK will provide some extended implementations using design patterns that can help you address specific scenarios and business problems within your application when you choose to follow the domain model design path to develop your solutions.
 
-Finally, I intend to give Domain-Driven Design concepts the attention and time they deserve, to give the developers the most complete abstractions they also deserve.
+Finally, I aim to give Domain-Driven Design concepts the attention and time they deserve, to give developers the more complete abstractions they deserve too.
 
 ## Some very important things you should know before you start
 
