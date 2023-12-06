@@ -165,7 +165,7 @@ Enough introductions, let's dive into it!
 
 I like to call this concept as the *final desired common language everyone in the project should know and must use*.
 
-We use language and words to create and maintain a communication between developers and business experts, so we can have a good understanting of the subjects and topics being discussed in a conversation. And for this to happen with some degree of success, we need a common way of talking, something that looks like an verbal (literally) agreement of understanding and meaning of the words, and terms we are going to use throught the whole project.
+We use language and words to create and maintain a communication between developers and business experts, so we can have a good understanting of the subjects and topics being discussed in a conversation. And for this to happen with some degree of success, we need a common way of talking, something that looks like an verbal (literally) agreement of understanding and meaning of the words: the terms we are going to use throught the whole project.
 
 The **ubiquitous language** is introduced in the book on chapter 2, with a simple glimpse:
 
@@ -207,7 +207,7 @@ So, these are the key characteristics of an Entity:
 - They can have relations ***(optional)***
 - They reinforce usage of constraints and validations by creational and structural patterns ***(required)***
 - They can have diferent representations of the same identity ***(optional)***
-- They can transform through its life cycle , but holds the same identity ***(optional)***
+- They can transform radically through its life cycle, but holds the same identity ***(optional)***
 - They cannot be replaced by equivalent instances because they are unique ***(required)***
 
 ## Value Objects
