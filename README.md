@@ -267,7 +267,7 @@ The Services are introduced in the book on chapter 5, when Eric Evans says:
 
 So, these are the key characteristics of a Domain Service:
 - They SHOULD HAVE a defined and definite responsibility ***(required)***
-- Their responsibility SHOULD BE defided as part of the domain model ***(required)***
+- Their responsibility SHOULD BE defined as part of the domain model ***(required)***
 - Their names SHOULD COME FROM the Ubiquitous Language ***(required)***
 - Their parameters and results SHOULD BE domain objects ***(required)***
 - They SHOULD NOT strip or steal behavior from Entities and Value Objects ***(required)***
