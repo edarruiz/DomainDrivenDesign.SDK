@@ -19,6 +19,7 @@
   - [Transformations](#transformations)
 - [Extending the toolbox - More Patterns](#extending-the-toolbox---more-patterns)
   - [Specification](#specification)
+    - [Specification + Repository Patterns](#specification--repository-patterns)
   - [Strategy Design Pattern](#strategy-design-pattern)
   - [Composite](#composite)
   - [CQRS (Command and Query Responsibility Segregation)](#cqrs-command-and-query-responsibility-segregation)
@@ -190,7 +191,7 @@ The entities (a.k.a Reference Objects) are presented in the book on chapter 5, w
 
 And finally, Eric Evans describes the exact definition of what an **Entity** is:
 
-> *"An object defined primarily by its identity is called an ENTITY. ENTITIES have special modeling and design considerations. They have life cycles that can radically change their form  and content, but a thread of continuity must be maintained. Their identities must be defined so  hat they can be effectively tracked. Their class definitions, responsibilities, attributes, and associations should revolve around who they are, rather than the particular attributes they carry. Even for ENTITIES that don't transform so radically or have such complicated life cycles, placing them in the semantic category leads to more lucid models and more robust implementations. " (...)*
+> *"An object defined primarily by its identity is called an ENTITY. ENTITIES have special modeling and design considerations. They have life cycles that can radically change their form  and content, but a thread of continuity must be maintained. Their identities must be defined so  that they can be effectively tracked. Their class definitions, responsibilities, attributes, and associations should revolve around who they are, rather than the particular attributes they carry. Even for ENTITIES that don't transform so radically or have such complicated life cycles, placing them in the semantic category leads to more lucid models and more robust implementations. " (...)*
 >
 > *"When an object is distinguished by its identity, rather than its attributes, make this primary to its definition in the model. Keep the class definition simple and focused on life cycle continuity and identity. Define a means of distinguishing each object regardless of its form or history. Be alert to requirements that call for matching objects by attributes. Define an operation that is guaranteed to produce a unique result for each object, possibly by attaching a symbol that is guaranteed unique. This means of identification may come from the outside, or it may be an arbitrary identifier created by and for the system, but it must correspond to the identity distinctions in the model. The model must define what it means to be the same thing." (...)*
 > 
@@ -515,7 +516,85 @@ With this key definitions in mind, we will explore in the next sections some of 
 
 ## Specification
 
-TODO - In progress of documentation
+The Specification Pattern is a design pattern created by Eric Evans and Martin Fowler in [this paper](https://www.martinfowler.com/apsupp/spec.pdf) and was published in [Martin Fowler website](https://martinfowler.com/) in 1997. This paper use some real world use cases to describe not only the concepts, but also the details that should be considered when implementing this pattern inside your application.
+
+This pattern should be considered as a domain pattern, more specifically, *an Analysis Pattern*, and is often used in the context of the Domain-Driven Design.
+
+In short, this pattern allows you to isolate the business rules in a single unit of code (a specification), that can be encapsulated, making it reusable in different parts of the application. We can recombine the business rules by chaining them using boolean logic.
+
+Finally, this pattern supports the S.O.L.I.D [Open/Closed Principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle) when we isolate a single business rule as a piece of code, allowing the extension of classes, without worrying about the concrete implementation of the inheritance of these classes.
+
+In the paper, Eric Evans and Martin Fowler said:
+
+> *"In this paper we examine the specification idea and some of its ramifications in a series of patterns. The central idea of Specification is to separate the statement of how to match a candidate, from the candidate object that it is matched against. As well as its usefulness in selection, it is also valuable for validation and for building to order.*
+>
+> *This paper is not going to go into details about how a specification is implemented. We see this as an analysis pattern, a way of capturing how people think about a domain, and a design pattern, a useful mechanism for accomplishing some system tasks. We do have some sample code, though, as is rather too glib to talk about objects that have all these capabilities without at least outlining how this could be done. Also, there are consequences to different implementations. We will look into three implementation strategies you can apply to specifications. A **Hard Coded Specification** implements the specification as a code fragment, essentially treating the specification as a **Strategy** [Gang of Four]. This allows a great deal of flexibility, but requires programming for every new specification. A **Parameterized Specification** allows new specifications to be built without programming, indeed at run time, but you are limited as to what kind of specifications you can build by what the programmers have set up. Although programmers can be generous in providing parameters to customize, eventually they can make the parameterized specification too complex to use and difficult to maintain. A **Composite Specification** uses an interpreter [Gang of Four] to cut a very agreeable middle path. The programmers provide basic elements of the specification and ways to combine them, later users can then assemble specifications with a great deal flexibility.*
+>
+> *Once you have used specification, a powerful pattern that builds on it is **Subsumption**. The usual use of specification tests the specification against a candidate object to see if that object satisfies all the requirements expressed in the specification. **Subsumption** allows you to compare specifications to see if satisfying one implies satisfaction of the other. It is also sometimes possible to use subsumption to implement satisfaction. If a candidate object can produce a specification that characterizes it, the testing with a specification then becomes a comparison of similar specifications — removing the coupling of specification mechanism entirely from the domain. Subsumption works particularly well with **Composite Specifications**.*
+>
+> *Sometimes it is useful to think about cases where you have a **Partially Satisfied Specification**. You may not find any matches for the complete specification. Or you may have completed part of the specification and need to consider alternatives for the part that remains.* (...)"
+> 
+
+The Composite pattern solves the following problems:
+
+- When you need to select a subset of objects based on some criteria, and to refresh the selection at various times (**Selection**);
+- When you need to check that only suitable objects are used for a certain role (**Validation**);
+- When you need to describe what an object might do, without explaining the details of how the object does it, in a way that a candidate might be built to fulfill the requirement (**Construct-to-order**).
+
+By using this pattern, we can achieve the following benefits according to the paper:
+
+- Decouple the design of the requirements, fullfilment and validation of a specific business rule
+  - > *"Because the objects involved now have a crisper responsibility, it is easier to decouple them. This allows us to avoid the duplication of effort of implementing similar functionality many times, and makes integration much easier, since different parts of the system use the same constructs to express constraints or requirements, and frequently communicate with each other in these terms. (...)"*
+- Clear and declarative definitions of responsibility
+  - > *"For example, if you have built a mechanism that is supposed to derive an object that fits a spec, even if you trust the mechanism enough not to check, it gives your design a clear definition. RouteSelector finds a Route that satisfies a RouteSpecification. Even if we do not do an isSatisfiedBy: test, we have clearly defined the responsibility of RouteSelector without linking it to a specific process for finding routes. (...)"*
+
+Using this strategies, the *Selection*, the *Validation* and the *Construct-to-order* allow us to create useful and very creative implementations that fulfill the business rules implementation details of the domain-model of our applications.
+
+Finally, Eric Evans and Martin Fowler mention you should avoid the overuse of the Specification Pattern:
+
+> *"There are temptations to over-use Specification. The most common is to use it to build objects with flexible attributes — a sort of poor man’s frame system. Remember that the specification has a clear responsibility: to identify an object that satisfies it, and to combine with other specifications in various ways that support that basic responsibility (see below). (...)"*
+>
+> *"(...) if you find that your object is representing an actual entity in the domain, rather than placing constraints on some other, possibly hypothetical, entity, you should reconsider the use of this pattern"*
+> 
+
+Since we are focusing on Domain Driven Design's use of these patterns, the next section will describe a very common use of this pattern, combining it with the query *Repositories* to find and retrieve data represented in our domain models.
+
+### Specification + Repository Patterns
+
+This pattern is also used along with the Repository pattern to query objects from database based on a wide range of matching criterias, using the specification as expression conditions to filter the data from the database, returning an object or collection of objects represented inside the domain.
+
+A popular usage of this pattern is when we create paging, sorting and when discovering objects or collections of objects existing inside an aggregate by general querying the persistance layer of the application.
+
+One possible approach to implementing the Repository pattern is to make it generic enough to be reused and shared among objects of the model. By doing this, we now have a limitation: since the implementation is now very generic, we are unable to get certain types of data from the database due the parameters needed for more specific queries. This is where the Specification pattern comes to help.
+
+We can reuse the specification, within the generic Repository, and combine them with more conditions to meet complex query requirements, providing a way to separate the validation rules from the domain objects, simplifying the implementation and minimizing the amount of data fetched from the database or from the data source layer.
+
+In the chapter 6 of the book, Eric Evans says:
+
+> *"The easiest REPOSITORY to build has hard-coded queries with specific parameters. These queries can be various: retrieving an ENTITY by its identity (provided by almost all REPOSITORIES); requesting a collection of objects with a particular attribute value or a complex combination of parameters; selecting objects based on value ranges (such as date ranges); and even performing some calculations that fall within the general responsibility of a REPOSITORY (especially drawing on operations supported by the underlying database). (...)"*
+>
+> ![hard_coded_queries](doc/hard_coded_queries.png)
+> <sub>*Image from the book, Chapter 6, Figure 6.19, Hard-coded queries in a simple REPOSITORY*</sub>
+>
+> *"On projects with a lot of querying, a REPOSITORY framework can be built that allows more flexible queries. This calls for a staff familiar with the necessary technology and is greatly aided by a supportive infrastructure."*
+>
+> *"One particularly apt approach to generalizing REPOSITORIES through a framework is to use SPECIFICATION-based queries. A SPECIFICATION allows a client to describe (that is, specify) what it wants without concern for how it will be obtained. In the process, an object that can actually carry out the selection is created." (...)*
+>
+> ![specification_complex_queries](doc/specification_complex_queries.png)
+> <sub>*Image from the book, Chapter 6, Figure 6.20, A flexible, declarative SPECIFICATION of search criteria in a sophisticated REPOSITORY*</sub>
+>
+> *"The SPECIFICATION-based query is elegant and flexible. Depending on the infrastructure available, it may be a modest framework or it may be prohibitively difficult. Rob Mee and Edward Hieatt discuss more of the technical issues involved in designing such REPOSITORIES in Fowler 2002."*
+>
+> *"Even a REPOSITORY design with flexible queries should allow for the addition of specialized hardcoded queries. They might be convenience methods that encapsulate an often-used query or a query that doesn't return the objects themselves, such as a mathematical summary of selected objects. Frameworks that don't allow for such contingencies tend to distort the domain design or get bypassed by developers. (...)"*
+>
+
+Its very important to know that application code can and will ignore the usage of the Repositories due its abstractions and generic implementations, but the developers cannot ignore the implementation details about the data persistence. Understanding this, we still need to look for ways to design our code to achieve a good balance between performance and maintainability.
+
+With this in mind, we must understand that we can use the Specification pattern not only as an injection of parameters and filters into queries aiming for good performance, but also as "rules" represented in the form of expressions that must also be applied to queries.
+
+Finally, to achieve this, we need to implement the Specifications as evaluators and once valid, they must be applied to the dataset to return the corresponding data after the conditions are met.
+
+There are multiple applications of this technique, but when using Domain-Driven Design, its a good technical decision to apply the use of Specifications to all Repositories involved in Domain operations.
 
 ## Strategy Design Pattern
 
