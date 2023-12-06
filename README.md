@@ -151,11 +151,11 @@ The Domain-Driven Design strategy is composed by a series of concepts, patterns 
 
 The main goal of Domain-Driven Design is to create a model (representation) that accurately reflects the domain and its associated business rules, which can then be used to drive the design and implementation of the software.
 
-To achieve this, the book provides us a huge number of constraints and careful definitions that should be followed to create a successful domain model design solution.
+To achieve this, the Eric Evans book provides a huge number of constraints and careful definitions that should be followed to create a successful domain model design solution.
 
 In the book, the author uses Java to create some examples of the implementations as real and fictitious scenarios to demonstrate the usage of the concepts explained along the chapters. When using C# to create this implementations, we have a lot of tools and powerful ways on how to implement all the DDD concepts using dotnet.
 
-But before that, is very important you notice you should know and master **all the basic concepts** of the domain-driven design before jumping into the code. 
+But before that, is very important that you realize that you must know and master **all the basic concepts** of the domain-driven design before jumping into coding. 
 
 The next sections, I will give you an overview of the basic concepts without getting too much into the details. This content should be enough for you to get all the things right, and have a good grasp of what the concepts of the Domain-Driven Design are all about.
 
