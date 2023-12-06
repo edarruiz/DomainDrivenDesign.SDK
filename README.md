@@ -227,9 +227,11 @@ Value objects are introduced in the book on chapter 5, when Eric Evans says:
 
 So, these are the key characteristics of a Value Object:
 - They are NOT UNIQUE ***(required)***
+- They DO NOT HAVE identity ***(required)***
 - They are IMMUTABLE ***(required)***
+- They DO NOT HAVE a life cycle and a history ***(required)***
 - They represent JUST VALUES by its internal structure ***(required)***
-- They have attributes ***(required)***
+- They can have attributes ***(required)***
 - They can have behaviors ***(optional)***
 - They can have relations ***(optional)***
 - They can have validation constraints ***(optional)***
