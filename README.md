@@ -69,11 +69,11 @@ Finally, I aim to give Domain-Driven Design concepts the attention and time they
 
 ## Some very important things you should know before you start
 
-The concepts of the Domain-Driven Design are not easy to understand at first glance, nor they are easy to digest on first reading, reflecting as results of the first implementations you are going to create.
+The concepts of Domain-Driven Design are not easy to understand at first glance, nor are they easy to digest on first reading, reflecting themselves as results of the first implementations you will create.
 
-I would like to advice you not to give up trying to understand and acquire knowledge until you succeed, both from the theory and from the implementation details perspective. 
+I would like to advice you not to give up trying to understand and acquire knowledge until you succeed, both from the theoretical and from the implementation details perspective. 
 
-**You WILL fail a lot before master the concepts, and you will fail a lot before getting used to the implementation details about the Domain-Driven Design concepts.**
+**You WILL fail a lot before master the concepts, and you will fail a lot before getting used to the implementation details about the Domain-Driven Design concepts. This is EXPECTED and that is a good thing. It's how you are going to learn to put all things together.**
 
 The documentation content you will find here is not for the developers who like *bite-sized content*, that you can acquire in just a few minutes, like the development-related content we can see a lot out there. Today, I believe that many developers have lost their sense of persistence and consistence when trying to learn new things. Nowadays, developers tend to think that if they can't learn something in 30 minutes, then it's not worth their time.
 
