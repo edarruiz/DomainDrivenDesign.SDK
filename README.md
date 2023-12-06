@@ -128,7 +128,7 @@ I will give you my personal (not completed) list of the advantages (pros) and dr
   - It will force some changes in the mindset of developer teams;
   - It will require your developer teams to be able to deal with conflicts between software development concepts they have held for years and will now be challenged to change;
   - It will show you that OOP maybe become your enemy instead of helping you, when trying to implement some of the concepts of DDD, based on the language and technology of your choice;
-  - Discovering what should be an Entity and what should be a Value Object can be challenging and sometimes confusing, even for the experienced developers;
+  - Discovering what should be an Entity, what should be a Value Object and their relations can be challenging and sometimes confusing, even for the experienced developers;
   - Finally, it will help the project to fail by a large margin if used incorrectly in relation to the DDD rules, strategy and concepts;
 
 It's up to you to decide whether DDD is the right choice for your project. DDD sometimes becomes boring, and even with experience, it can be complicated.
