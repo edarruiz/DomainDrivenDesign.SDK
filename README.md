@@ -265,14 +265,14 @@ The Services are introduced in the book on chapter 5, when Eric Evans says:
 *Services* are a common name and a very common concept in web applications. For this reason, when using Domain-Driven Design, we prefix the names of this kind of services, especifically calling them *Domain Services*.
 
 So, these are the key characteristics of a Domain Service:
-- They SHOULD HAVE a defined and definite responsibility ***(required)***
-- Their responsibility SHOULD BE defined as part of the domain model ***(required)***
-- Their names SHOULD COME FROM the Ubiquitous Language ***(required)***
-- Their parameters and results SHOULD BE domain objects ***(required)***
-- They SHOULD NOT strip or steal behavior from Entities and Value Objects ***(required)***
+- They MUST HAVE a defined and definite responsibility ***(required)***
+- Their responsibility MUST BE defined as part of the domain model ***(required)***
+- Their names MUST COME FROM the Ubiquitous Language ***(required)***
+- Their parameters and results MUST BE domain objects ***(required)***
+- They MUST NOT strip or steal behavior from Entities and Value Objects ***(required)***
 - They MUST represent an operation related to the domain concept that is not a natural part of an Entity or Value Object ***(required)***
 - Their interface MUST BE defined in terms of other elements of the domain model ***(required)***
-- Their operation SHOULD BE stateless ***(required)***
+- Their operation MUST BE stateless ***(required)***
 
 ## The Domain Object Life Cycle
 
