@@ -197,18 +197,18 @@ And finally, Eric Evans describes the exact definition of what an **Entity** is:
 > 
 
 So, these are the key characteristics of an Entity:
-- They are UNIQUE ***(required)***
-- They have a UNIQUE identity ***(required)***
-- They are MUTABLE ***(required)***
-- They have a life cycle and a history ***(required)***
-- They have attributes ***(required)***
-- They have behaviors ***(required)***
-- They have validation constraints ***(required)***
-- They can have relations ***(optional)***
-- They reinforce usage of constraints and validations by creational and structural patterns ***(required)***
-- They can have diferent representations of the same identity ***(optional)***
-- They can transform radically through its life cycle, but holds the same identity ***(optional)***
-- They cannot be replaced by equivalent instances because they are unique ***(required)***
+- They ARE UNIQUE ***(required)***
+- They HAVE A UNIQUE IDENTITY ***(required)***
+- They ARE MUTABLE ***(required)***
+- They HAVE A LIFE CYCLE and a history ***(required)***
+- They HAVE attributes ***(required)***
+- They HAVE behaviors' ***(required)***
+- They HAVE validation constraints ***(required)***
+- They CAN HAVE relations ***(optional)***
+- They REINFORCE usage of constraints and validations by creational and structural patterns ***(required)***
+- They CAN HAVE diferent representations of the same identity ***(optional)***
+- They CAN TRANSFORM radically through its life cycle, but holds the same identity ***(optional)***
+- They CANNOT BE REPLACED BY EQUIVALENT INSTANCES because they are unique ***(required)***
 
 ## Value Objects
 
@@ -226,19 +226,18 @@ Value objects are introduced in the book on chapter 5, when Eric Evans says:
 > 
 
 So, these are the key characteristics of a Value Object:
-- They are NOT UNIQUE ***(required)***
-- They DO NOT HAVE identity ***(required)***
-- They are IMMUTABLE ***(required)***
+- They ARE NOT UNIQUE ***(required)***
+- They DO NOT HAVE IDENTITY ***(required)***
+- They ARE IMMUTABLE ***(required)***
 - They DO NOT HAVE a life cycle and a history ***(required)***
-- They represent JUST VALUES by its internal structure ***(required)***
-- They can have attributes ***(required)***
-- They can have behaviors ***(optional)***
-- They can have relations ***(optional)***
-- They can have validation constraints ***(optional)***
-- They can reinforce usage of constraints and validations by creational and structural patterns ***(optional)***
-- They do not have a lifecycle ***(required)***
-- They can be replaced by equivalent instances ***(required)***
-- They can reduce complex operations or tasks to represent, simplify and isolate business rules or any domain logic ***(optional, situational)***
+- They REPRESENT JUST VALUES by its internal structure ***(required)***
+- They CAN HAVE attributes ***(required)***
+- They CAN HAVE behaviors ***(optional)***
+- They CAN HAVE relations ***(optional)***
+- They CAN HAVE validation constraints ***(optional)***
+- They CAN REINFORCE usage of constraints and validations by creational and structural patterns ***(optional)***
+- They CAN BE REPLACED BY EQUIVALENT INSTANCES ***(required)***
+- They CAN REDUCE COMPLEX OPERATIONS OR TASKS TO REPRESENT, simplify and isolate business rules or any domain logic ***(optional, situational)***
 
 ## Domain Services
 
