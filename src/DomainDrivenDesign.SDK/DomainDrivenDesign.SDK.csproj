@@ -1,23 +1,76 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<SignAssembly>False</SignAssembly>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>Domain-Driven Design SDK for dotnet</Title>
+		<Description>Software Development Kit for the Domain-Driven Design concepts for dotnet.</Description>
+		<Copyright>Copyright (c) 2023-2024 Eric Roberto Darruiz</Copyright>
+		<Company>Eric Roberto Darruiz</Company>
+		<Authors>Eric Roberto Darruiz</Authors>
+		<PackageProjectUrl>https://github.com/edarruiz/DomainDrivenDesign.SDK</PackageProjectUrl>
+		<Version>1.0.0-RC1</Version>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageReleaseNotes>https://github.com/edarruiz/DomainDrivenDesign.SDK/blob/main/src/DomainDrivenDesign.SDK/RELEASE_NOTES.md</PackageReleaseNotes>
+		<PackageTags>cqrs;ddd;transformations;domain-driven design;entities;factories;shared-kernel;repositories;ddd-architecture;bounded-contexts;mediator-pattern;aggregate-root;aggregates;value-objects;context-mapping;design-patterns;domain-services;anticorruption-layer;dotnet8</PackageTags>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/edarruiz/DomainDrivenDesign.SDK</RepositoryUrl>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>True</IncludeSymbols>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Exceptions\" />
-    <Folder Include="Errors\" />
-    <Folder Include="Aggregates\" />
-    <Folder Include="DomainServices\" />
-    <Folder Include="DomainEvents\" />
-    <Folder Include="Helpers\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="ValueObjects\" />
-    <Folder Include="Repositories\" />
-    <Folder Include="Primitives\" />
-  </ItemGroup>
+	<!-- In case of GitHub Actions -->
+	<PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	</PropertyGroup>
+
+	<!-- In case of Azure Pipelines -->
+	<PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="LICENSE" />
+		<None Remove="README.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="LICENSE">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Exceptions\" />
+		<Folder Include="DomainServices\" />
+		<Folder Include="DomainEvents\" />
+		<Folder Include="Helpers\" />
+		<Folder Include="Extensions\" />
+		<Folder Include="Primitives\" />
+		<Folder Include="ValueObjects\" />
+		<Folder Include="Repositories\" />
+	</ItemGroup>
 
 </Project>
