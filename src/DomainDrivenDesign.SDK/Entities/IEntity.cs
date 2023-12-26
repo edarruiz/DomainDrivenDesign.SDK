@@ -1,4 +1,4 @@
-﻿namespace DomainDrivenDesign.SDK.Entities;
+﻿namespace DomainDrivenDesign.SDK;
 
 /// <summary>
 /// Represents the implementation interface of the domain entities.
