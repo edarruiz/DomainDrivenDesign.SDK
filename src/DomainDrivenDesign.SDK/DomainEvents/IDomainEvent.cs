@@ -1,7 +1,7 @@
 ﻿namespace DomainDrivenDesign.SDK;
 
 /// <summary>
-/// Represents the implementation interface of the domain events.
+/// Represents the the domain events implementation interface.
 /// </summary>
 public interface IDomainEvent {
 }
