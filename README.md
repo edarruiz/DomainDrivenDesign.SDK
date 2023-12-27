@@ -471,15 +471,15 @@ Now its time to move forward, to explore a little bit more about the concepts re
 
 # The Domain-Driven Design Model Integrity Concepts
 
-TODO - In progress of documentation
-
-## Bounded Contexts
-
 In real world projects, we work with different models, in different teams. When together, the models can diverge based on implementation decisions made in relation to the business segment that each model represents. 
 
 Because of this, we can sometimes end up with different concepts and approaches within the actual implementation of the business rules of each specific model, resulting in unreliable software with logical contradictions within the model's rules.
 
+(continue...)
 
+## Bounded Contexts
+
+TODO - In progress of documentation
 
 ## Continuous Integration (Not CI/CD framework)
 
