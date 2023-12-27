@@ -1,7 +1,7 @@
 ﻿namespace DomainDrivenDesign.SDK;
 
 /// <summary>
-/// Represents the implementation interface of the aggregate root for the domain aggregates.
+/// Represents the aggregate root implementation interface for domain aggregates.
 /// </summary>
 public interface IAggregateRoot {
 }
