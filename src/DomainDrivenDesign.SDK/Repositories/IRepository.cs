@@ -1,7 +1,15 @@
 ﻿namespace DomainDrivenDesign.SDK;
 
 /// <summary>
-/// Represents the implementation interface for the domain repositories.
+/// Represents the domain repositories implementation interface.
 /// </summary>
-internal interface IRepository {
+/// <typeparam name="TAggregateRoot">Represents the aggregate root entity of 
+/// the repository.</typeparam>
+internal interface IRepository<TAggregateRoot> where TAggregateRoot : IAggregateRoot {
+
+    /// <summary>
+    /// Gets the aggregate unit of work.
+    /// </summary>
+    IUnitOfWork UnitOfWork { get; }
+
 }
