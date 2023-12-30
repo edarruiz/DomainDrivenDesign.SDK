@@ -1,7 +1,7 @@
-﻿namespace DomainDrivenDesign.SDK.Exceptions;
+﻿namespace DomainDrivenDesign.SDK;
 
 /// <summary>
-/// Represents a domain exception.
+/// Represents a domain exception that occur during application execution.
 /// </summary>
 [Serializable]
 public class DomainException : Exception {
