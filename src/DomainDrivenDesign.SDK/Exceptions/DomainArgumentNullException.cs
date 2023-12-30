@@ -4,6 +4,7 @@
 /// Represents a domain exception that is thrown when a <see langword="null"/> reference 
 /// is passed to a method that does not accept it as a valid argument.
 /// </summary>
+[Serializable]
 public class DomainArgumentNullException : ArgumentNullException {
 
     /// <summary>
