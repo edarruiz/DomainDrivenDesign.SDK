@@ -63,7 +63,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Exceptions\" />
 		<Folder Include="DomainServices\" />
 		<Folder Include="Helpers\" />
 		<Folder Include="Extensions\" />
